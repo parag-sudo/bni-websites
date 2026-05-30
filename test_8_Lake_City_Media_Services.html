@@ -1,0 +1,332 @@
+<!-- Website design by Think To Share — thinktoshare.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lake City Media Services | Advertising Agency | Cartersville, GA</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a2e;line-height:1.6}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.10);padding:0 2rem}
+  .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-size:1.25rem;font-weight:800;color:#0d47a1;letter-spacing:-0.5px}
+  .logo span{color:#1976d2}
+  nav a{margin-left:1.6rem;text-decoration:none;color:#333;font-weight:500;font-size:.95rem;transition:color .2s}
+  nav a:hover{color:#1976d2}
+  .nav-cta{background:#1976d2;color:#fff!important;padding:.45rem 1.1rem;border-radius:6px}
+  .nav-cta:hover{background:#0d47a1!important}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#0d47a1 0%,#1976d2 50%,#42a5f5 100%);color:#fff;padding:6rem 2rem;text-align:center}
+  .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:1rem;line-height:1.15}
+  .hero p{font-size:1.25rem;opacity:.9;max-width:620px;margin:0 auto 2.2rem}
+  .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:#fff;color:#0d47a1;font-weight:700;padding:.85rem 2rem;border-radius:8px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .btn-outline{border:2px solid #fff;color:#fff;font-weight:700;padding:.85rem 2rem;border-radius:8px;text-decoration:none;transition:background .2s}
+  .btn-outline:hover{background:rgba(255,255,255,.15)}
+
+  /* Sections */
+  section{padding:5rem 2rem}
+  .container{max-width:1200px;margin:auto}
+  .section-tag{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1976d2;margin-bottom:.5rem}
+  h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:1rem}
+  .lead{font-size:1.05rem;color:#555;max-width:680px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem}
+  .about-img{background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:16px;height:320px;display:flex;align-items:center;justify-content:center;font-size:5rem}
+  .stat-row{display:flex;gap:2rem;margin-top:2rem}
+  .stat{text-align:center}
+  .stat strong{display:block;font-size:2rem;font-weight:900;color:#0d47a1}
+  .stat span{font-size:.85rem;color:#666}
+
+  /* Services */
+  .services{background:#f8faff}
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 12px rgba(13,71,161,.08);transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,71,161,.15)}
+  .card-icon{font-size:2.4rem;margin-bottom:1rem}
+  .card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:#0d47a1}
+  .card p{font-size:.9rem;color:#666}
+
+  /* Why Choose Us */
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .feature{text-align:center;padding:2rem 1.5rem;border-radius:12px;border:1px solid #e3f2fd}
+  .feature-icon{font-size:2.5rem;margin-bottom:1rem}
+  .feature h3{font-weight:700;margin-bottom:.4rem}
+  .feature p{font-size:.88rem;color:#666}
+
+  /* Testimonials */
+  .testimonials{background:#f8faff}
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .testi{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+  .stars{color:#fbc02d;font-size:1.1rem;margin-bottom:.8rem}
+  .testi blockquote{font-style:italic;color:#444;font-size:.95rem;margin-bottom:1rem}
+  .testi-author{font-weight:700;font-size:.88rem;color:#0d47a1}
+
+  /* Results */
+  .results{background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;text-align:center}
+  .results h2,.results .section-tag{color:#fff}
+  .results .section-tag{opacity:.8}
+  .results .lead{color:rgba(255,255,255,.85);margin:0 auto}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-top:3rem}
+  .big-stat strong{display:block;font-size:3rem;font-weight:900}
+  .big-stat span{font-size:1rem;opacity:.8}
+
+  /* Blog */
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .blog-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);background:#fff}
+  .blog-img{height:180px;background:linear-gradient(135deg,#e3f2fd,#90caf9);display:flex;align-items:center;justify-content:center;font-size:3rem}
+  .blog-body{padding:1.5rem}
+  .blog-date{font-size:.8rem;color:#888;margin-bottom:.4rem}
+  .blog-body h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:#0d47a1}
+  .blog-body p{font-size:.88rem;color:#666;margin-bottom:1rem}
+  .read-more{font-size:.88rem;font-weight:700;color:#1976d2;text-decoration:none}
+  .read-more:hover{text-decoration:underline}
+
+  /* Contact */
+  .contact{background:#f8faff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+  .contact-form input,.contact-form textarea{width:100%;padding:.85rem 1rem;border:1px solid #ccc;border-radius:8px;font-size:.95rem;margin-bottom:1rem;font-family:inherit}
+  .contact-form textarea{height:130px;resize:vertical}
+  .btn-submit{background:#0d47a1;color:#fff;border:none;padding:.9rem 2.5rem;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s}
+  .btn-submit:hover{background:#1976d2}
+  .contact-info p{margin-bottom:.8rem;font-size:.95rem;color:#444}
+  .contact-info strong{color:#0d47a1}
+  .map-placeholder{background:#e3f2fd;border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;color:#1976d2;font-weight:700;margin-top:1.5rem;font-size:1.1rem}
+
+  /* Footer */
+  footer{background:#0d1b4b;color:#b0bec5;padding:3rem 2rem 1.5rem}
+  .footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+  .footer-brand strong{display:block;color:#fff;font-size:1.1rem;margin-bottom:.5rem}
+  .footer-brand p{font-size:.88rem}
+  .footer-col h4{color:#fff;margin-bottom:1rem;font-size:.95rem}
+  .footer-col a{display:block;color:#b0bec5;text-decoration:none;font-size:.88rem;margin-bottom:.4rem}
+  .footer-col a:hover{color:#90caf9}
+  .socials{display:flex;gap:.8rem;margin-top:1rem}
+  .socials a{color:#90caf9;font-size:1.3rem;text-decoration:none}
+  .footer-bottom{max-width:1200px;margin:2rem auto 0;border-top:1px solid #1e2a5e;padding-top:1rem;font-size:.8rem;text-align:center}
+
+  @media(max-width:768px){
+    .about-grid,.contact-grid,.footer-inner{grid-template-columns:1fr}
+    nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="nav-inner">
+    <div class="logo">Lake City <span>Media</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Lake City Media Services</h1>
+  <p>Full-service advertising agency helping businesses in Cartersville, GA grow with bold, results-driven campaigns.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Get a Free Strategy Call</a>
+    <a href="tel:6788824173" class="btn-outline">📞 Call (678) 882-4173</a>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-tag">About Us</p>
+        <h2>Northwest Georgia's Creative Media Experts</h2>
+        <p class="lead">Lake City Media Services, led by Gina Lombardi, is a full-service advertising agency proudly serving businesses throughout Cartersville, GA and the greater Northwest Georgia region. With deep roots in the local market, we combine strategic thinking with creative execution to help brands stand out, attract customers, and grow sustainably. Whether you're a startup or an established business, we tailor every campaign to your unique goals and budget.</p>
+        <div class="stat-row">
+          <div class="stat"><strong>150+</strong><span>Clients Served</span></div>
+          <div class="stat"><strong>8+</strong><span>Years Experience</span></div>
+          <div class="stat"><strong>98%</strong><span>Client Retention</span></div>
+        </div>
+      </div>
+      <div class="about-img">🎯</div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+  <div class="container">
+    <p class="section-tag">What We Do</p>
+    <h2>Our Services</h2>
+    <p class="lead">From strategy to execution, we offer end-to-end advertising and media solutions.</p>
+    <div class="card-grid">
+      <div class="card"><div class="card-icon">📢</div><h3>Brand Advertising</h3><p>Create memorable brand identities and advertising campaigns that resonate with your target audience across all channels.</p></div>
+      <div class="card"><div class="card-icon">📱</div><h3>Digital Marketing</h3><p>Data-driven digital campaigns across Google, Facebook, Instagram, and beyond — maximizing your ROI at every step.</p></div>
+      <div class="card"><div class="card-icon">🎨</div><h3>Creative Design</h3><p>Eye-catching graphics, videos, and creative assets designed to stop the scroll and drive action.</p></div>
+      <div class="card"><div class="card-icon">📊</div><h3>Media Planning & Buying</h3><p>Strategic placement of your message across TV, radio, print, and digital to reach the right audience at the right time.</p></div>
+      <div class="card"><div class="card-icon">🔍</div><h3>SEO & Content Marketing</h3><p>Organic growth strategies that build your online presence and drive consistent, high-quality traffic to your business.</p></div>
+      <div class="card"><div class="card-icon">📈</div><h3>Analytics & Reporting</h3><p>Transparent monthly reporting with clear insights on campaign performance, ROI, and actionable next steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section id="why">
+  <div class="container">
+    <p class="section-tag">Why Us</p>
+    <h2>Why Choose Lake City Media</h2>
+    <div class="features-grid">
+      <div class="feature"><div class="feature-icon">🏆</div><h3>Proven Results</h3><p>We measure success by your growth, not just impressions. Every campaign is tied to real business outcomes.</p></div>
+      <div class="feature"><div class="feature-icon">🤝</div><h3>Local Market Knowledge</h3><p>Deep understanding of the Cartersville & NW Georgia market that national agencies simply can't match.</p></div>
+      <div class="feature"><div class="feature-icon">⚡</div><h3>Agile & Responsive</h3><p>We move fast, adapt quickly, and keep you informed at every stage of your campaign.</p></div>
+      <div class="feature"><div class="feature-icon">💡</div><h3>Strategic Thinking</h3><p>Every tactic is backed by research and aligned with your long-term business goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <p class="section-tag">Client Love</p>
+    <h2>What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Gina and the Lake City Media team transformed our marketing. Our leads tripled in four months and we've never looked back. Absolutely worth every penny."</blockquote>
+        <div class="testi-author">— Marcus T., Cartersville Auto Group</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Finally an agency that actually listens and delivers. They understood our local audience better than anyone else we'd tried. The results speak for themselves."</blockquote>
+        <div class="testi-author">— Sandra B., Blue Ridge Home Realty</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Professional, creative, and data-driven. Our social media presence went from zero to over 5,000 engaged followers in just six months. Highly recommend!"</blockquote>
+        <div class="testi-author">— Daniel R., Cherokee County Restaurants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results Section (Industry-Specific) -->
+<section class="results">
+  <div class="container">
+    <p class="section-tag">Our Impact</p>
+    <h2>Results We've Delivered</h2>
+    <p class="lead">Real numbers from real campaigns for real businesses in Northwest Georgia.</p>
+    <div class="stats-grid">
+      <div class="big-stat"><strong>3.8×</strong><span>Average ROI for clients</span></div>
+      <div class="big-stat"><strong>42%</strong><span>Avg. reduction in cost-per-lead</span></div>
+      <div class="big-stat"><strong>$2.4M</strong><span>Revenue generated for clients</span></div>
+      <div class="big-stat"><strong>150+</strong><span>Campaigns launched</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog">
+  <div class="container">
+    <p class="section-tag">Insights</p>
+    <h2>From Our Blog</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img">✍️</div>
+        <div class="blog-body">
+          <div class="blog-date">May 15, 2025</div>
+          <h3>5 Advertising Mistakes Small Businesses in Georgia Make (And How to Fix Them)</h3>
+          <p>Most local businesses leave money on the table with common ad errors. Here's what to avoid and what to do instead.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">📱</div>
+        <div class="blog-body">
+          <div class="blog-date">April 28, 2025</div>
+          <h3>Why Social Media Alone Won't Grow Your Cartersville Business in 2025</h3>
+          <p>Social is one piece of the puzzle. Discover the full media mix that actually drives local business growth.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img">📊</div>
+        <div class="blog-body">
+          <div class="blog-date">April 10, 2025</div>
+          <h3>How to Set a Realistic Advertising Budget for a Local Business</h3>
+          <p>Budgeting for ads doesn't have to be guesswork. Here's a framework that works for businesses of any size.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <p class="section-tag">Get In Touch</p>
+    <h2>Ready to Grow Your Business?</h2>
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="alert('Thank you! We\'ll be in touch shortly.');return false;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone Number">
+        <textarea placeholder="Tell us about your business and goals..."></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>📍 Address</strong><br>45 McTier Circle<br>Cartersville, GA 30120</p>
+        <p><strong>📞 Phone</strong><br>(678) 882-4173</p>
+        <p><strong>✉️ Email</strong><br>info@lakecitymediaservices.com</p>
+        <p><strong>🕐 Hours</strong><br>Monday–Friday: 9am – 6pm EST</p>
+        <div class="map-placeholder">📍 Find Us in Cartersville, GA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>Lake City Media Services</strong>
+      <p>Full-service advertising agency helping Northwest Georgia businesses grow.</p>
+      <div class="socials">
+        <a href="#" title="Facebook">&#128218;</a>
+        <a href="#" title="Instagram">&#128247;</a>
+        <a href="#" title="LinkedIn">&#128101;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Brand Advertising</a>
+      <a href="#services">Digital Marketing</a>
+      <a href="#services">Media Planning</a>
+      <a href="#services">SEO & Content</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Lake City Media Services. All rights reserved. | Cartersville, GA<br>
+    Website design by <a href="https://thinktoshare.com" style="color:#90caf9">Think To Share</a>
+  </div>
+</footer>
+
+</body>
+</html>
