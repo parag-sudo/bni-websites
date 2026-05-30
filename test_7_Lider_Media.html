@@ -1,0 +1,880 @@
+<!-- Website design by Think To Share — thinktoshare.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lider Media | Advertising Agency | Oxnard, CA</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #e63946;
+    --secondary: #1d3557;
+    --accent: #f4a261;
+    --dark: #0d1b2a;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, #1d3557 0%, #e63946 100%);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--dark); background: var(--white); line-height: 1.6; }
+
+  /* ===== HEADER ===== */
+  header {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--dark);
+    padding: 0 2rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .logo-icon {
+    width: 42px; height: 42px; background: var(--gradient);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -1px;
+  }
+  .logo-text { color: white; font-size: 1.4rem; font-weight: 800; letter-spacing: 1px; }
+  .logo-text span { color: var(--primary); }
+  nav { display: flex; gap: 0; }
+  nav a {
+    color: #ccc; text-decoration: none; padding: 0.5rem 1rem;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;
+    border-radius: 4px; transition: all 0.3s;
+  }
+  nav a:hover { color: white; background: rgba(230,57,70,0.2); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+  .hamburger span { display: block; width: 25px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+  @media(max-width:768px){
+    .hamburger { display: flex; }
+    nav { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: var(--dark); padding: 1rem 0; }
+    nav.open { display: flex; }
+    nav a { padding: 0.8rem 2rem; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--gradient);
+    min-height: 100vh; display: flex; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(ellipse at 70% 30%, rgba(230,57,70,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(244,162,97,0.2) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1) rotate(0deg);} 50%{transform:scale(1.05) rotate(2deg);} }
+  .hero-grid {
+    max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(244,162,97,0.2); border: 1px solid var(--accent);
+    color: var(--accent); padding: 0.4rem 1.2rem; border-radius: 50px;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: white; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; max-width: 480px;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--primary); color: white; padding: 0.9rem 2rem;
+    border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    border: none; cursor: pointer; transition: all 0.3s; display: inline-block;
+    box-shadow: 0 4px 20px rgba(230,57,70,0.4);
+  }
+  .btn-primary:hover { background: #c1121f; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(230,57,70,0.5); }
+  .btn-outline {
+    background: transparent; color: white; padding: 0.9rem 2rem;
+    border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem;
+    border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s; display: inline-block;
+  }
+  .btn-outline:hover { background: white; color: var(--secondary); border-color: white; transform: translateY(-2px); }
+  .hero-visual {
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+    padding: 2.5rem; width: 100%; max-width: 380px;
+  }
+  .hero-stat {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat:last-child { border-bottom: none; }
+  .hero-stat-icon { font-size: 1.8rem; width: 50px; text-align: center; }
+  .hero-stat-num { font-size: 1.8rem; font-weight: 900; color: var(--accent); }
+  .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  @media(max-width:900px){
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero p { margin: 0 auto 2.5rem; }
+    .hero-btns { justify-content: center; }
+    .hero-visual { display: none; }
+  }
+
+  /* ===== SECTIONS COMMON ===== */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-block; background: rgba(230,57,70,0.1); color: var(--primary);
+    padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: var(--secondary); margin-bottom: 0.8rem;
+  }
+  .section-title span { color: var(--primary); }
+  .section-sub { color: var(--gray); font-size: 1.05rem; max-width: 600px; }
+  .text-center { text-align: center; }
+  .text-center .section-sub { margin: 0 auto; }
+  .divider { width: 60px; height: 4px; background: var(--gradient); border-radius: 2px; margin: 1rem auto 0; }
+
+  /* ===== ABOUT ===== */
+  .about { background: var(--light); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-visual {
+    background: var(--gradient); border-radius: 20px; padding: 3rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .about-visual-item {
+    background: rgba(255,255,255,0.15); border-radius: 12px; padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem; color: white;
+  }
+  .about-visual-icon { font-size: 1.8rem; }
+  .about-visual-text { font-weight: 600; font-size: 0.95rem; }
+  .about-content p { color: var(--gray); font-size: 1.05rem; margin-bottom: 1.2rem; line-height: 1.8; }
+  .about-owner {
+    display: flex; align-items: center; gap: 1rem; margin-top: 2rem;
+    padding: 1.2rem; background: white; border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+  .owner-avatar {
+    width: 60px; height: 60px; background: var(--gradient);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: white; font-weight: 900; flex-shrink: 0;
+  }
+  .owner-name { font-weight: 700; color: var(--secondary); }
+  .owner-title { font-size: 0.85rem; color: var(--gray); }
+  @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; } }
+
+  /* ===== SERVICES ===== */
+  .services { background: white; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--light); border-radius: 16px; padding: 2rem;
+    border: 1px solid #eee; transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0;
+    background: var(--gradient); transition: height 0.4s;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+  .service-card:hover::before { height: 100%; }
+  .service-icon {
+    width: 60px; height: 60px; background: var(--gradient);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin-bottom: 1.2rem; color: white;
+  }
+  .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.7rem; }
+  .service-card p { color: var(--gray); font-size: 0.92rem; line-height: 1.7; }
+
+  /* ===== WHY CHOOSE US ===== */
+  .why { background: var(--secondary); }
+  .why .section-title { color: white; }
+  .why .section-label { background: rgba(230,57,70,0.3); }
+  .why .section-sub { color: rgba(255,255,255,0.7); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+  .why-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+  .why-card h3 { color: var(--accent); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .why-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials { background: var(--light); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: white; border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C'; position: absolute; top: 1rem; right: 1.5rem;
+    font-size: 4rem; color: var(--primary); opacity: 0.15; font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
+  .stars { color: #ffc107; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+  .testimonial-text { color: var(--gray); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--gradient);
+    display: flex; align-items: center; justify-content: center; color: white;
+    font-weight: 700; font-size: 1rem; flex-shrink: 0;
+  }
+  .author-name { font-weight: 700; color: var(--secondary); font-size: 0.95rem; }
+  .author-location { font-size: 0.8rem; color: var(--gray); }
+
+  /* ===== RESULTS (STATS) ===== */
+  .results { background: var(--gradient); }
+  .results .section-title { color: white; }
+  .results .section-label { background: rgba(255,255,255,0.15); color: white; }
+  .results .section-sub { color: rgba(255,255,255,0.8); }
+  .results .divider { background: white; opacity: 0.5; }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .stat-box { text-align: center; }
+  .stat-number {
+    font-size: 3.5rem; font-weight: 900; color: white;
+    font-family: 'Segoe UI', sans-serif; line-height: 1; margin-bottom: 0.3rem;
+  }
+  .stat-number span { color: var(--accent); }
+  .stat-label { color: rgba(255,255,255,0.8); font-size: 1rem; font-weight: 500; }
+  .stat-icon { font-size: 2.2rem; margin-bottom: 0.8rem; display: block; }
+  .stat-divider {
+    width: 1px; background: rgba(255,255,255,0.2);
+    margin: 0 1rem;
+  }
+  @media(max-width:600px){ .stat-divider { display: none; } }
+
+  /* ===== BLOG ===== */
+  .blog { background: white; }
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .blog-card {
+    background: var(--light); border-radius: 16px; overflow: hidden;
+    transition: all 0.3s; border: 1px solid #eee;
+  }
+  .blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+  .blog-image {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 3rem; position: relative; overflow: hidden;
+  }
+  .blog-image.c1 { background: linear-gradient(135deg, #1d3557, #e63946); }
+  .blog-image.c2 { background: linear-gradient(135deg, #e63946, #f4a261); }
+  .blog-image.c3 { background: linear-gradient(135deg, #0d1b2a, #1d3557); }
+  .blog-body { padding: 1.5rem; }
+  .blog-meta { font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-bottom: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.7rem; line-height: 1.4; }
+  .blog-card p { color: var(--gray); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+  .btn-read {
+    display: inline-block; background: var(--primary); color: white;
+    padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.82rem; font-weight: 700;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .btn-read:hover { background: var(--secondary); transform: translateX(3px); }
+
+  /* ===== CONTACT ===== */
+  .contact { background: var(--light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+  .contact-form-wrap {
+    background: white; border-radius: 20px; padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.4rem; }
+  input, textarea, select {
+    width: 100%; padding: 0.8rem 1rem; border: 1.5px solid #e0e0e0;
+    border-radius: 8px; font-family: inherit; font-size: 0.92rem;
+    color: var(--dark); background: var(--light); transition: border 0.3s;
+    outline: none;
+  }
+  input:focus, textarea:focus { border-color: var(--primary); background: white; }
+  textarea { resize: vertical; min-height: 120px; }
+  .btn-submit {
+    width: 100%; padding: 1rem; background: var(--gradient);
+    color: white; border: none; border-radius: 50px;
+    font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s;
+    letter-spacing: 1px; margin-top: 0.5rem;
+  }
+  .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(230,57,70,0.3); }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .info-card {
+    background: white; border-radius: 14px; padding: 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .info-icon {
+    width: 48px; height: 48px; background: var(--gradient);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; color: white; flex-shrink: 0;
+  }
+  .info-label { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .info-value { font-weight: 600; color: var(--secondary); font-size: 0.95rem; margin-top: 0.2rem; }
+  .map-placeholder {
+    background: linear-gradient(135deg, #1d3557 0%, #e63946 100%);
+    border-radius: 14px; height: 200px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; color: white; gap: 0.5rem;
+    font-weight: 700; font-size: 1.1rem;
+  }
+  .map-placeholder span { font-size: 2.5rem; }
+  .map-placeholder small { font-weight: 400; opacity: 0.8; font-size: 0.85rem; }
+  @media(max-width:768px){ .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.7);
+    padding: 4rem 2rem 1.5rem;
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand p { font-size: 0.9rem; margin: 1rem 0 1.5rem; line-height: 1.8; color: rgba(255,255,255,0.55); }
+  .social-links { display: flex; gap: 0.8rem; }
+  .social-link {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.08);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem; text-decoration: none; transition: all 0.3s;
+  }
+  .social-link:hover { background: var(--primary); transform: translateY(-3px); }
+  .footer-col h4 { color: white; font-size: 0.95rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
+  .footer-col ul li a:hover { color: var(--accent); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.82rem; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .footer-bottom a { color: var(--accent); text-decoration: none; }
+  @media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:500px){ .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="home">
+  <div class="header-inner">
+    <a href="#home" class="logo">
+      <div class="logo-icon">LM</div>
+      <span class="logo-text">Lider <span>Media</span></span>
+    </a>
+    <div class="hamburger" onclick="this.parentElement.parentElement.querySelector('nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-grid container">
+    <div class="hero-content">
+      <div class="hero-badge">&#9733; Oxnard's #1 Advertising Agency</div>
+      <h1>Amplify Your Brand With <span>Lider Media</span></h1>
+      <p>Strategic advertising solutions that drive real results. We help Oxnard businesses grow their audience, boost conversions, and dominate their market.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">&#128221; Get a Free Quote</a>
+        <a href="tel:5550000000" class="btn-outline">&#128222; Call Now</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-stat">
+          <div class="hero-stat-icon">&#128640;</div>
+          <div>
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Campaigns Launched</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">&#128200;</div>
+          <div>
+            <div class="hero-stat-num">3.2x</div>
+            <div class="hero-stat-label">Average ROI Increase</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">&#128101;</div>
+          <div>
+            <div class="hero-stat-num">200+</div>
+            <div class="hero-stat-label">Happy Clients</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">&#127942;</div>
+          <div>
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Industry Awards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-visual-item">
+          <div class="about-visual-icon">&#127775;</div>
+          <div class="about-visual-text">Full-Service Advertising Agency</div>
+        </div>
+        <div class="about-visual-item">
+          <div class="about-visual-icon">&#127759;</div>
+          <div class="about-visual-text">Serving Oxnard & All of Ventura County</div>
+        </div>
+        <div class="about-visual-item">
+          <div class="about-visual-icon">&#128202;</div>
+          <div class="about-visual-text">Data-Driven Campaign Strategy</div>
+        </div>
+        <div class="about-visual-item">
+          <div class="about-visual-icon">&#9989;</div>
+          <div class="about-visual-text">Proven Results Across Industries</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">The Agency Behind <span>Oxnard's</span> Growing Brands</h2>
+        <div class="divider" style="margin: 1rem 0;"></div>
+        <p>Founded by Francisco De La Torre, Lider Media is a full-service advertising agency rooted in Oxnard, CA, with a passion for transforming local businesses into recognizable, powerful brands. Francisco built this agency on the belief that every business — no matter its size — deserves world-class marketing that delivers measurable growth.</p>
+        <p>With deep ties to the Oxnard community and Ventura County, Lider Media combines creative storytelling with strategic data analysis to craft advertising campaigns that truly resonate with target audiences. We stay ahead of industry trends so our clients always benefit from the most effective, modern marketing techniques available.</p>
+        <p>Our team of dedicated creatives, strategists, and media buyers work collaboratively to ensure every campaign exceeds expectations. Trusted by over 200 businesses, we are proud to be the agency Oxnard turns to when results matter most.</p>
+        <div class="about-owner">
+          <div class="owner-avatar">FDT</div>
+          <div>
+            <div class="owner-name">Francisco De La Torre</div>
+            <div class="owner-title">Founder &amp; CEO, Lider Media</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our <span>Advertising</span> Services</h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:1rem;">From digital campaigns to traditional media, we offer end-to-end advertising solutions tailored to your unique business goals.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128187;</div>
+        <h3>Digital Advertising</h3>
+        <p>From Google Ads to programmatic display campaigns, we put your brand in front of the right audience at the right moment. Our digital strategies are optimized for maximum reach and minimum wasted spend.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128241;</div>
+        <h3>Social Media Marketing</h3>
+        <p>We create and manage high-performance social media advertising across Facebook, Instagram, TikTok, and LinkedIn. Engage your ideal customers where they spend their time and drive real conversions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127909;</div>
+        <h3>Video &amp; Creative Production</h3>
+        <p>Compelling video content is the heartbeat of modern advertising. Our creative team produces stunning video ads, brand films, and social content that stop the scroll and tell your story powerfully.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128269;</div>
+        <h3>Search Engine Optimization</h3>
+        <p>Dominate search rankings and attract organic traffic that converts. Our SEO specialists build technical, on-page, and off-page strategies that keep you visible to customers actively searching for your services.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127760;</div>
+        <h3>Brand Strategy &amp; Identity</h3>
+        <p>Your brand is your most valuable asset. We develop cohesive brand identities including logos, messaging, and visual systems that differentiate your business and create lasting impressions in the marketplace.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128203;</div>
+        <h3>Media Planning &amp; Buying</h3>
+        <p>Get maximum exposure across TV, radio, outdoor, print, and digital channels. We negotiate and secure the best media placements in Oxnard and beyond, ensuring your budget delivers the highest possible impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Why Lider Media</div>
+      <h2 class="section-title" style="color:white;">Why Businesses <span style="color:var(--accent);">Choose Us</span></h2>
+      <div class="divider" style="background:rgba(255,255,255,0.4);"></div>
+      <p class="section-sub" style="margin-top:1rem; color:rgba(255,255,255,0.7);">We are more than an agency — we are your dedicated growth partner, committed to your brand's long-term success.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">&#127942;</span>
+        <h3>Award-Winning Work</h3>
+        <p>Our campaigns have earned industry recognition for creativity, strategy, and measurable performance results across multiple sectors.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128200;</span>
+        <h3>Data-Driven Results</h3>
+        <p>Every decision we make is backed by analytics. We track, measure, and optimize every campaign to ensure your investment delivers the best possible return.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128101;</span>
+        <h3>Local Market Experts</h3>
+        <p>As a proud Oxnard-based agency, we know the local market inside and out — the culture, the consumers, and the competitive landscape.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128222;</span>
+        <h3>Dedicated Support</h3>
+        <p>You get a dedicated account manager who is always accessible, proactive with updates, and fully aligned with your business objectives and timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Client Reviews</div>
+      <h2 class="section-title">What Our <span>Clients</span> Say</h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:1rem;">Real results from real businesses right here in Oxnard and Ventura County.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"Lider Media completely transformed our online presence. Francisco and his team created a Google Ads campaign that tripled our inbound leads within the first 60 days. The ROI was incredible — we couldn't be happier with the results."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div>
+            <div class="author-name">Miguel Ramirez</div>
+            <div class="author-location">Restaurant Owner, Oxnard CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"Working with Lider Media was a game-changer for our retail brand. Their social media advertising strategy grew our Instagram following by over 8,000 and drove a 45% increase in our online store revenue. Truly an exceptional team."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SC</div>
+          <div>
+            <div class="author-name">Sofia Castillo</div>
+            <div class="author-location">Boutique Owner, Ventura CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"I've worked with a few agencies before, but Lider Media stands above the rest. Francisco personally took the time to understand our goals and built a brand strategy that perfectly captures who we are. Our new identity has received so much positive feedback!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JV</div>
+          <div>
+            <div class="author-name">James Villalobos</div>
+            <div class="author-location">Real Estate Broker, Oxnard CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS (INDUSTRY SECTION) ===== -->
+<section class="results">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Our Impact</div>
+      <h2 class="section-title">Our <span style="color:var(--accent);">Results</span> Speak for Themselves</h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:1rem;">Numbers that demonstrate our commitment to driving real, measurable growth for every client we serve.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-icon">&#128640;</span>
+        <div class="stat-number">500<span>+</span></div>
+        <div class="stat-label">Campaigns Launched</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-icon">&#128101;</span>
+        <div class="stat-number">200<span>+</span></div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-icon">&#128200;</span>
+        <div class="stat-number">3.2<span>x</span></div>
+        <div class="stat-label">Average ROI Delivered</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-icon">&#128279;</span>
+        <div class="stat-number">12<span>M+</span></div>
+        <div class="stat-label">Ad Impressions Generated</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-icon">&#127942;</span>
+        <div class="stat-number">10<span>+</span></div>
+        <div class="stat-label">Industry Awards Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Insights &amp; Tips</div>
+      <h2 class="section-title">From Our <span>Marketing Blog</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:1rem;">Stay ahead of the curve with expert advertising and marketing insights from the Lider Media team.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-image c1">&#128202;</div>
+        <div class="blog-body">
+          <div class="blog-meta">&#128197; December 10, 2024 &nbsp;|&nbsp; Digital Advertising</div>
+          <h3>5 Google Ads Strategies Every Oxnard Small Business Should Use in 2025</h3>
+          <p>Learn how to maximize your Google Ads budget with proven bidding strategies, audience targeting techniques, and ad copy formulas that convert browsers into paying customers.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-image c2">&#128241;</div>
+        <div class="blog-body">
+          <div class="blog-meta">&#128197; November 28, 2024 &nbsp;|&nbsp; Social Media</div>
+          <h3>How to Build a Winning Social Media Advertising Funnel That Actually Converts</h3>
+          <p>Discover the step-by-step social media funnel strategy our agency uses to take cold audiences and turn them into loyal brand advocates — without blowing your ad budget.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-image c3">&#127760;</div>
+        <div class="blog-body">
+          <div class="blog-meta">&#128197; November 14, 2024 &nbsp;|&nbsp; Brand Strategy</div>
+          <h3>Why Your Brand Identity Is the Most Important Investment You Can Make in 2025</h3>
+          <p>In a crowded market, your brand is what sets you apart. We explore why investing in a strong, cohesive brand identity is the single highest-leverage move for growing your business this year.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's Grow Your <span>Business Together</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-top:1rem;">Ready to take your advertising to the next level? Send us a message and Francisco will personally be in touch within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-wrap">
+        <h3 style="color:var(--secondary);margin-bottom:1.5rem;font-size:1.2rem;">Send Us a Message</h3>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(555) 000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option>Digital Advertising</option>
+              <option>Social Media Marketing</option>
+              <option>Video &amp; Creative Production</option>
+              <option>Search Engine Optimization</option>
+              <option>Brand Strategy &amp; Identity</option>
+              <option>Media Planning &amp; Buying</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your business and marketing goals..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">&#128640; Send Message — Get Free Quote</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">&#128205;</div>
+          <div>
+            <div class="info-label">Our Location</div>
+            <div class="info-value">Oxnard, CA 93030<br><small style="color:var(--gray);font-weight:400;">Serving All of Ventura County</small></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128222;</div>
+          <div>
+            <div class="info-label">Phone Number</div>
+            <div class="info-value"><a href="tel:5550000000" style="color:var(--secondary);text-decoration:none;">(555) 000-0000</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128140;</div>
+          <div>
+            <div class="info-label">Email Address</div>
+            <div class="info-value"><a href="mailto:info@lidermedia.com" style="color:var(--secondary);text-decoration:none;">info@lidermedia.com</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">&#128336;</div>
+          <div>
+            <div class="info-label">Business Hours</div>
+            <div class="info-value">Mon–Fri: 9:00 AM – 6:00 PM<br><small style="color:var(--gray);font-weight:400;">Sat: By Appointment | Sun: Closed</small></div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <span>&#128205;</span>
+          Find Us Here
+          <small>Oxnard, CA — Ventura County</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo" style="margin-bottom:0.5rem;">
+        <div class="logo-icon">LM</div>
+        <span class="logo-text">Lider <span>Media</span></span>
+      </a>
+      <p>Oxnard's premier full-service advertising agency helping local and regional businesses grow through bold creative, strategic media, and data-driven campaigns that deliver real results.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Facebook">&#128100;</a>
+        <a href="#" class="social-link" title="Instagram">&#128247;</a>
+        <a href="#" class="social-link" title="LinkedIn">&#128188;</a>
+        <a href="#" class="social-link" title="YouTube">&#127916;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Digital Advertising</a></li>
+        <li><a href="#services">Social Media Marketing</a></li>
+        <li><a href="#services">Video Production</a></li>
+        <li><a href="#services">SEO</a></li>
+        <li><a href="#services">Brand Strategy</a></li>
+        <li><a href="#services">Media Buying</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">Oxnard, CA 93030</a></li>
+        <li><a href="tel:5550000000">(555) 000-0000</a></li>
+        <li><a href="mailto:info@lidermedia.com">info@lidermedia.com</a></li>
+        <li><a href="#">Mon–Fri 9AM–6PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 Lider Media. All rights reserved. | Oxnard, CA</span>
+    <span>Website by <a href="https://thinktoshare.com" target="_blank">Think To Share</a></span>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('nav').classList.remove('open');
+      }
+    });
+  });
+
+  // Animated stat counters
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+      const text = counter.textContent;
+      const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+      if (!num) return;
+      let start = 0;
+      const duration = 2000;
+      const step = num / (duration / 16);
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= num) { start = num; clearInterval(timer); }
+        const suffix = text.replace(/[0-9.]/g, '');
+        counter.innerHTML = (Number.isInteger(num) ? Math.floor(start) : start.toFixed(1)) + suffix;
+      }, 16);
+    });
+  }
+
+  // Intersection Observer for stats
+  const statsSection = document.querySelector('.results');
+  let animated = false;
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      animateCounters();
+    }
+  }, { threshold: 0.3 });
+  if (statsSection) observer.observe(statsSection);
+</script>
+</body>
+</html>
