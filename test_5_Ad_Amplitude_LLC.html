@@ -1,0 +1,920 @@
+<!-- Website design by Think To Share — thinktoshare.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Amplitude, LLC | Advertising Agency | Springfield, MO</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #e94560;
+    --accent2: #f5a623;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --text: #333344;
+    --text-light: #6b7280;
+    --gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+    --card-shadow: 0 8px 32px rgba(26,26,46,0.12);
+    --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(26,26,46,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent);
+    padding: 0 2rem;
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .logo {
+    display: flex; flex-direction: column; text-decoration: none;
+  }
+  .logo-name {
+    font-size: 1.5rem; font-weight: 800; color: var(--white);
+    letter-spacing: -0.5px;
+  }
+  .logo-name span { color: var(--accent); }
+  .logo-tagline { font-size: 0.65rem; color: var(--accent2); letter-spacing: 2px; text-transform: uppercase; }
+  nav { display: flex; gap: 0.25rem; align-items: center; }
+  nav a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    padding: 0.5rem 0.85rem; border-radius: 6px;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.3px;
+    transition: var(--transition);
+  }
+  nav a:hover { color: var(--accent); background: rgba(233,69,96,0.12); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+  .hamburger span { width: 25px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--transition); }
+  .mobile-nav { display: none; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--gradient);
+    min-height: 100vh; position: relative; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.15; pointer-events: none;
+  }
+  .orb1 { width: 500px; height: 500px; background: var(--accent); top: -100px; right: -100px; }
+  .orb2 { width: 350px; height: 350px; background: #0f3460; bottom: -50px; left: -50px; }
+  .orb3 { width: 200px; height: 200px; background: var(--accent2); top: 50%; left: 40%; }
+  .hero-content {
+    max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.4);
+    color: var(--accent); padding: 0.4rem 1rem; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900;
+    color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    font-size: 1.15rem; color: rgba(255,255,255,0.75);
+    margin-bottom: 2.5rem; max-width: 520px; line-height: 1.8;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: var(--white);
+    padding: 1rem 2rem; border-radius: 8px; text-decoration: none;
+    font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px;
+    transition: var(--transition); border: 2px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(233,69,96,0.35);
+  }
+  .btn-primary:hover { background: transparent; color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,0.4); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 1rem 2rem; border-radius: 8px; text-decoration: none;
+    font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px;
+    transition: var(--transition); border: 2px solid rgba(255,255,255,0.4);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--white); transform: translateY(-2px); }
+  .hero-visual {
+    display: flex; flex-direction: column; gap: 1.2rem; position: relative; z-index: 2;
+  }
+  .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hero-stat {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; padding: 1.5rem; text-align: center;
+    backdrop-filter: blur(10px); transition: var(--transition);
+  }
+  .hero-stat:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+  .hero-stat .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1; }
+  .hero-stat .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; letter-spacing: 0.5px; }
+  .hero-stat-wide {
+    background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.3);
+    border-radius: 16px; padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+    backdrop-filter: blur(10px);
+  }
+  .hero-stat-wide .icon { font-size: 2rem; }
+  .hero-stat-wide .text { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.4; }
+  .hero-stat-wide .text strong { color: var(--white); display: block; font-size: 1rem; }
+
+  /* ── SECTION HELPERS ── */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: inline-block; background: rgba(233,69,96,0.1);
+    color: var(--accent); padding: 0.3rem 1rem; border-radius: 50px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
+  .section-title span { color: var(--accent); }
+  .section-sub { color: var(--text-light); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
+  .text-center { text-align: center; }
+  .text-center .section-sub { margin: 0 auto; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--light); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center;
+  }
+  .about-image-area {
+    position: relative;
+  }
+  .about-img-box {
+    background: var(--gradient); border-radius: 20px;
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+    font-size: 6rem; position: relative; overflow: hidden;
+  }
+  .about-img-box::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(233,69,96,0.2), transparent);
+  }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--accent); color: var(--white);
+    padding: 1rem 1.5rem; border-radius: 12px;
+    text-align: center; box-shadow: 0 8px 30px rgba(233,69,96,0.4);
+  }
+  .about-badge .num { font-size: 2rem; font-weight: 900; line-height: 1; }
+  .about-badge .lbl { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.9; }
+  .about-text h2 { margin-bottom: 1.5rem; }
+  .about-text p { color: var(--text-light); line-height: 1.85; margin-bottom: 1.5rem; font-size: 1.02rem; }
+  .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .pillar {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: var(--white); padding: 0.9rem 1rem;
+    border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-size: 0.88rem; font-weight: 600; color: var(--primary);
+  }
+  .pillar .icon { font-size: 1.3rem; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--white); border: 1px solid #e8e8f0;
+    border-radius: 18px; padding: 2rem 1.8rem;
+    transition: var(--transition); position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0); transform-origin: left; transition: var(--transition);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-8px); box-shadow: var(--card-shadow); border-color: transparent; }
+  .service-icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(245,166,35,0.1));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.9rem; margin-bottom: 1.25rem;
+    transition: var(--transition);
+  }
+  .service-card:hover .service-icon { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .service-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; }
+  .service-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.2rem;
+    color: var(--accent); font-size: 0.85rem; font-weight: 700; text-decoration: none;
+    transition: var(--transition);
+  }
+  .service-link:hover { gap: 0.7rem; }
+
+  /* ── WHY CHOOSE US ── */
+  .why { background: var(--gradient); padding: 5rem 2rem; }
+  .why .section-title { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.7); }
+  .why .section-label { background: rgba(233,69,96,0.2); }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .why-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px; padding: 2rem 1.5rem; text-align: center;
+    transition: var(--transition); backdrop-filter: blur(10px);
+  }
+  .why-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-6px); }
+  .why-icon { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+  .why-card h3 { color: var(--white); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .why-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--light); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3rem; }
+  .testi-card {
+    background: var(--white); border-radius: 18px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: var(--transition);
+    position: relative;
+  }
+  .testi-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow); }
+  .testi-card::before {
+    content: '\201C'; position: absolute; top: 1rem; right: 1.5rem;
+    font-size: 5rem; color: rgba(233,69,96,0.1); font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .stars { color: var(--accent2); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .testi-text { color: var(--text-light); font-size: 0.93rem; line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 1rem; }
+  .author-avatar {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--gradient); display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-weight: 800; font-size: 1rem; flex-shrink: 0;
+  }
+  .author-info .name { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+  .author-info .role { color: var(--text-light); font-size: 0.8rem; }
+
+  /* ── RESULTS (STATS) ── */
+  .results { background: var(--white); }
+  .results-intro { max-width: 650px; }
+  .stats-area { margin-top: 3.5rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem; }
+  .stat-box {
+    text-align: center; padding: 2rem 1rem;
+    border: 2px solid #f0f0f8; border-radius: 18px;
+    transition: var(--transition); position: relative; overflow: hidden;
+  }
+  .stat-box::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .stat-box:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--card-shadow); }
+  .stat-number { font-size: 2.8rem; font-weight: 900; color: var(--primary); line-height: 1; }
+  .stat-number span { color: var(--accent); }
+  .stat-desc { color: var(--text-light); font-size: 0.88rem; margin-top: 0.5rem; line-height: 1.5; }
+  .results-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .bar-item { margin-bottom: 1rem; }
+  .bar-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+  .bar-track { background: #f0f0f8; border-radius: 50px; height: 8px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 50px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+  /* ── BLOG ── */
+  .blog { background: var(--light); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 3rem; }
+  .blog-card {
+    background: var(--white); border-radius: 18px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07); transition: var(--transition);
+  }
+  .blog-card:hover { transform: translateY(-8px); box-shadow: var(--card-shadow); }
+  .blog-img {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem; position: relative; overflow: hidden;
+  }
+  .blog-img-1 { background: linear-gradient(135deg, #1a1a2e, #e94560); }
+  .blog-img-2 { background: linear-gradient(135deg, #0f3460, #f5a623); }
+  .blog-img-3 { background: linear-gradient(135deg, #16213e, #e94560, #0f3460); }
+  .blog-body { padding: 1.5rem; }
+  .blog-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .blog-date { color: var(--text-light); font-size: 0.78rem; }
+  .blog-cat {
+    background: rgba(233,69,96,0.1); color: var(--accent);
+    padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .blog-card h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; line-height: 1.4; }
+  .blog-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.65; margin-bottom: 1.25rem; }
+  .btn-read {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--accent); font-size: 0.85rem; font-weight: 700; text-decoration: none;
+    transition: var(--transition);
+  }
+  .btn-read:hover { gap: 0.7rem; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--white); }
+  .contact-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+  .contact-form-wrap { background: var(--light); border-radius: 20px; padding: 2.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 2px solid #e8e8f0; border-radius: 10px;
+    font-size: 0.92rem; color: var(--text);
+    background: var(--white); transition: var(--transition);
+    font-family: inherit; outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(233,69,96,0.08); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .btn-submit {
+    width: 100%; background: var(--accent); color: var(--white);
+    border: none; padding: 1rem; border-radius: 10px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: var(--transition); letter-spacing: 0.5px;
+  }
+  .btn-submit:hover { background: #c73652; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(233,69,96,0.35); }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .info-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .info-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), #c73652);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0; color: var(--white);
+  }
+  .info-content .label { font-size: 0.78rem; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .info-content .value { color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+  .map-area {
+    height: 220px; border-radius: 16px; margin-top: 1.5rem;
+    background: var(--gradient);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.75rem; position: relative; overflow: hidden;
+  }
+  .map-area::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(233,69,96,0.2), transparent 70%);
+  }
+  .map-text { color: var(--white); font-weight: 700; font-size: 1.1rem; position: relative; z-index: 1; }
+  .map-sub { color: rgba(255,255,255,0.65); font-size: 0.85rem; position: relative; z-index: 1; }
+  .map-pin { font-size: 3rem; position: relative; z-index: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary); color: var(--white);
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 2rem;
+  }
+  .footer-brand .logo-name { font-size: 1.5rem; }
+  .footer-tagline { color: rgba(255,255,255,0.55); font-size: 0.88rem; margin-top: 0.75rem; line-height: 1.7; max-width: 280px; }
+  .footer-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+  .social-btn {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; cursor: pointer; transition: var(--transition);
+    text-decoration: none; color: var(--white);
+  }
+  .social-btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+  .footer-col h4 { font-size: 0.88rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+  .footer-links a:hover { color: var(--accent); padding-left: 4px; }
+  .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-contact-list li { color: rgba(255,255,255,0.75); font-size: 0.88rem; display: flex; gap: 0.5rem; align-items: flex-start; }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.82rem; }
+  .footer-bottom a { color: var(--accent); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { display: grid; grid-template-columns: 1fr 1fr; }
+    .hero-stat-wide { grid-column: 1 / -1; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-image-area { max-width: 400px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav {
+      background: rgba(26,26,46,0.98); padding: 1rem 2rem 2rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-weight: 500; }
+    .hero-stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-visual { grid-template-columns: 1fr 1fr; }
+    .testi-grid, .blog-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .results-bars { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .about-pillars { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .hero-btns { flex-direction: column; }
+    .hero-visual { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header id="top">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-name">Ad <span>Amplitude</span></span>
+      <span class="logo-tagline">LLC &nbsp;·&nbsp; Springfield, MO</span>
+    </a>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#top" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+    <a href="#blog" onclick="toggleMenu()">Blog</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">&#9889; Springfield's Premier Advertising Agency</div>
+      <h1>Amplify Your Brand with <span>Ad Amplitude</span></h1>
+      <p>Data-driven advertising and creative marketing strategies that transform your brand's presence, generate qualified leads, and deliver measurable ROI — all from right here in Springfield, MO.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">&#128197; Get a Free Quote</a>
+        <a href="tel:5550000000" class="btn-secondary">&#128222; Call Now</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stat-grid">
+        <div class="hero-stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Campaigns Launched</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Client Retention</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">12x</div>
+          <div class="stat-label">Avg. ROAS Delivered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">150+</div>
+          <div class="stat-label">Brands Transformed</div>
+        </div>
+      </div>
+      <div class="hero-stat-wide">
+        <span class="icon">&#127942;</span>
+        <div class="text">
+          <strong>Award-Winning Creative & Strategy</strong>
+          Trusted by businesses across Springfield and the Ozarks region to deliver results that matter.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-image-area">
+        <div class="about-img-box">&#128200;</div>
+        <div class="about-badge">
+          <div class="num">10+</div>
+          <div class="lbl">Years in Business</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">Springfield's Most Trusted <span>Ad Agency</span></h2>
+        <p>Ad Amplitude, LLC is a full-service advertising and digital marketing agency proudly based in Springfield, MO. Founded and led by David Tibbles, our agency was built on a single belief: every business — regardless of size — deserves marketing that actually moves the needle. David's hands-on approach and deep expertise across digital channels ensure every campaign is crafted with both creative vision and strategic precision.</p>
+        <p>From nationally recognized brands to thriving local businesses, we've helped clients across the Ozarks region grow their revenue, expand their reach, and outpace their competition. Our team combines cutting-edge technology with proven advertising fundamentals to deliver outcomes that speak for themselves.</p>
+        <p>When you partner with Ad Amplitude, you gain a transparent, dedicated team that treats your marketing budget like it's their own — maximizing every dollar while keeping you informed every step of the way.</p>
+        <div class="about-pillars">
+          <div class="pillar"><span class="icon">&#9989;</span> Strategy-First Approach</div>
+          <div class="pillar"><span class="icon">&#128200;</span> Data-Driven Decisions</div>
+          <div class="pillar"><span class="icon">&#127757;</span> Full-Service Agency</div>
+          <div class="pillar"><span class="icon">&#128101;</span> Springfield-Based Team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Comprehensive <span>Marketing Services</span></h2>
+      <p class="section-sub">From concept to conversion, we offer end-to-end advertising solutions designed to grow your business across every channel.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#127909;</div>
+        <h3>Video Production</h3>
+        <p>Compelling, high-quality video content that tells your brand's story — from concept development and scripting to full production and post-editing ready for broadcast, web, or social media.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128247;</div>
+        <h3>Photo Editing & Creative</h3>
+        <p>Professional photo editing, retouching, and graphic design services that ensure your visual brand assets are polished, consistent, and ready to impress across every platform and medium.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128227;</div>
+        <h3>Digital Marketing</h3>
+        <p>Integrated digital marketing strategies encompassing email campaigns, content marketing, conversion rate optimization, and analytics that drive measurable growth for your business.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128241;</div>
+        <h3>Social Media Management</h3>
+        <p>Full-service social media management for Facebook, Instagram, LinkedIn, and more — including content creation, community engagement, scheduling, and performance reporting every month.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128269;</div>
+        <h3>SEO Services</h3>
+        <p>Technical and content-driven SEO strategies that improve your search rankings, boost organic traffic, and ensure your business is found by the right audience at exactly the right time.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128184;</div>
+        <h3>Paid Media Buying (Google, Facebook & Instagram Ads)</h3>
+        <p>Strategic paid advertising on Google Ads, Facebook, and Instagram with expert audience targeting, creative testing, and continuous optimization to maximize your return on ad spend.</p>
+        <a href="#contact" class="service-link">Learn More &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Why Ad Amplitude</span>
+      <h2 class="section-title">The Agency Difference You <span>Deserve</span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.7);">We don't just run ads — we build lasting partnerships backed by transparency, expertise, and genuine results.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">&#127941;</span>
+        <h3>Licensed &amp; Fully Insured</h3>
+        <p>Ad Amplitude is a fully licensed LLC operating with complete professional liability coverage, giving you total peace of mind when entrusting your brand to our team.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128220;</span>
+        <h3>Free Strategy Consultation</h3>
+        <p>Every new client relationship begins with a complimentary strategy session. We evaluate your goals, audit your current efforts, and outline a custom plan — no obligation required.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#127968;</span>
+        <h3>True Local Experts</h3>
+        <p>We live and work in Springfield, MO. We understand the regional market, local consumer behavior, and the unique competitive landscape of the Ozarks business community.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#11088;</span>
+        <h3>5-Star Rated Service</h3>
+        <p>Our clients consistently rate us 5 stars for communication, creativity, and ROI delivery. We're proud of our reputation and protect it with every single campaign we run.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Client Stories</span>
+      <h2 class="section-title">What Springfield Businesses <span>Are Saying</span></h2>
+      <p class="section-sub">Real results from real businesses who trusted Ad Amplitude to amplify their brand presence and drive growth.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"David and his team at Ad Amplitude completely transformed our online presence. Our Google Ads campaigns are generating 4x more qualified leads than ever before, and our social media following has more than doubled in just eight months. They truly understand the Springfield market and bring ideas we never would have thought of ourselves."</p>
+        <div class="testi-author">
+          <div class="author-avatar">MT</div>
+          <div class="author-info">
+            <div class="name">Marcus T. — Owner, Treadwell Auto Group</div>
+            <div class="role">Springfield, MO · Google Ads & Social Media</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"We hired Ad Amplitude for video production and digital marketing, and I can honestly say it was the best investment our restaurant has made. The brand video they produced went viral locally and brought in so many new customers. Their SEO work moved us to the top of Google search results for our main keywords within three months — incredible team."</p>
+        <div class="testi-author">
+          <div class="author-avatar">SB</div>
+          <div class="author-info">
+            <div class="name">Sarah B. — Co-Owner, Brambleberry Kitchen</div>
+            <div class="role">Springfield, MO · Video Production & SEO</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"As a growing real estate firm, we needed a full-service marketing partner who could handle everything from paid ads to content creation. Ad Amplitude delivered beyond our expectations. Their Facebook and Instagram ad campaigns generated over 300 new leads in the first quarter alone. David is hands-on, responsive, and genuinely cares about our success."</p>
+        <div class="testi-author">
+          <div class="author-avatar">JH</div>
+          <div class="author-info">
+            <div class="name">Jennifer H. — Broker, Ozarks Realty Partners</div>
+            <div class="role">Springfield, MO · Paid Media & Content Creation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESULTS (INDUSTRY SECTION) ══ -->
+<section class="results" id="results">
+  <div class="container">
+    <div class="results-intro">
+      <span class="section-label">Our Results</span>
+      <h2 class="section-title">Numbers That Prove <span>We Deliver</span></h2>
+      <p class="section-sub">Our work is measured in outcomes — not outputs. Here's a snapshot of the real impact Ad Amplitude creates for clients across industries in Springfield and beyond.</p>
+    </div>
+    <div class="stats-area">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">$2.4<span>M+</span></div>
+          <div class="stat-desc">Ad spend managed across Google, Facebook &amp; Instagram campaigns</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">12<span>x</span></div>
+          <div class="stat-desc">Average return on ad spend delivered for e-commerce clients</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">320<span>%</span></div>
+          <div class="stat-desc">Average increase in organic search traffic within 6 months</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">150<span>+</span></div>
+          <div class="stat-desc">Businesses helped across Springfield, MO and the surrounding region</div>
+        </div>
+      </div>
+      <div class="results-bars">
+        <div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Google Ads Performance</span><span>94%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>SEO Ranking Improvement</span><span>88%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Social Media Engagement</span><span>91%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Lead Generation Rate</span><span>86%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:86%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Video Campaign Completion</span><span>97%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:97%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-header"><span>Client Satisfaction Score</span><span>98%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:98%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Marketing Insights</span>
+      <h2 class="section-title">From the <span>Ad Amplitude Blog</span></h2>
+      <p class="section-sub">Expert tips, industry news, and actionable marketing strategies from the team at Ad Amplitude — keeping Springfield businesses ahead of the curve.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img blog-img-1">&#128200;</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Paid Media</span>
+            <span class="blog-date">&#128197; November 12, 2024</span>
+          </div>
+          <h3>Why Your Google Ads Campaign Is Burning Budget (And How to Fix It)</h3>
+          <p>Most small businesses waste 40–60% of their Google Ads spend on misaligned keywords, poor match types, and unoptimized bidding strategies. Here's how to audit your account and reclaim that lost revenue right now.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img blog-img-2">&#128247;</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Social Media</span>
+            <span class="blog-date">&#128197; October 28, 2024</span>
+          </div>
+          <h3>Instagram Reels vs. TikTok: Which Platform Wins for Springfield Small Businesses in 2025?</h3>
+          <p>The short-form video landscape is more competitive than ever. We break down the organic reach, ad costs, demographics, and content strategies that matter most for local businesses in the Springfield, MO market.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img blog-img-3">&#128269;</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">SEO</span>
+            <span class="blog-date">&#128197; October 5, 2024</span>
+          </div>
+          <h3>Local SEO in 2025: The Complete Guide for Springfield, MO Businesses</h3>
+          <p>Ranking #1 on Google for local searches has never been more valuable — or more competitive. Discover the exact local SEO tactics our team uses to help Springfield businesses dominate the search results page.</p>
+          <a href="#blog" class="btn-read">Read More &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Ready to <span>Amplify Your Brand?</span></h2>
+      <p class="section-sub">Let's start a conversation about your goals. Request your free strategy consultation with David Tibbles and the Ad Amplitude team today.</p>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-form-wrap">
+        <h3 style="font-size:1.3rem;font-weight:800;color:var(--primary);margin-bottom:1.5rem;">Send Us a Message</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address *</label>
+              <input type="email" id="femail" name="email" placeholder="john@yourbusiness.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" name="phone" placeholder="(417) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="fservice">Service of Interest</label>
+              <select id="fservice" name="service">
+                <option value="">Select a service…</option>
+                <option>Video Production</option>
+                <option>Photo Editing & Creative</option>
+                <option>Digital Marketing</option>
+                <option>Social Media Management</option>
+                <option>SEO Services</option>
+                <option>Google Ads / Paid Media</option>
+                <option>Facebook & Instagram Ads</option>
+                <option>Content Creation</option>
+                <option>Full-Service Package</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Tell Us About Your Goals *</label>
+            <textarea id="fmsg" name="message" placeholder="Describe your business, current marketing challenges, and what results you're hoping to achieve…" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">&#9889; Send Message &amp; Get Free Consultation</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div>
+          <h3 style="font-size:1.3rem;font-weight:800;color:var(--primary);margin-bottom:1.5rem;">Contact Information</h3>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128205;</div>
+          <div class="info-content">
+            <div class="label">Our Location</div>
+            <div class="value">Springfield, MO<br><span style="font-weight:400;color:var(--text-light);font-size:0.88rem;">Serving Springfield &amp; the Ozarks Region</span></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128222;</div>
+          <div class="info-content">
+            <div class="label">Phone Number</div>
+            <div class="value"><a href="tel:5550000000" style="color:var(--primary);text-decoration:none;">(555) 000-0000</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128140;</div>
+          <div class="info-content">
+            <div class="label">Email Address</div>
+            <div class="value"><a href="mailto:info@adamplitudellc.com" style="color:var(--primary);text-decoration:none;">info@adamplitudellc.com</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">&#128336;</div>
+          <div class="info-content">
+            <div class="label">Business Hours</div>
+            <div class="value">Mon–Fri: 8:00 AM – 6:00 PM<br><span style="font-weight:400;color:var(--text-light);font-size:0.88rem;">Saturday by appointment</span></div>
+          </div>
+        </div>
+        <div class="map-area">
+          <div class="map-pin">&#128205;</div>
+          <div class="map-text">Find Us Here</div>
+          <div class="map-sub">Springfield, Missouri — Ozarks Region</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo" style="text-decoration:none;">
+        <span class="logo-name">Ad <span>Amplitude</span></span>
+      </a>
+      <p class="footer-tagline">Springfield's full-service advertising and digital marketing agency. We amplify brands, generate qualified leads, and deliver real, measurable results across every channel.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" title="Facebook" aria-label="Facebook">&#128420;</a>
+        <a href="#" class="social-btn" title="Instagram" aria-label="Instagram">&#128247;</a>
+        <a href="#" class="social-btn" title="LinkedIn" aria-label="LinkedIn">&#128101;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#results">Our Results</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Video Production</a></li>
+        <li><a href="#services">Digital Marketing</a></li>
+        <li><a href="#services">Social Media Mgmt</a></li>
+        <li><a href="#services">SEO Services</a></li>
+        <li><a href="#services">Google Ads</a></li>
+        <li><a href="#services">Facebook &amp; Instagram Ads</a></li>
+        <li><a href="#services">Content Creation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><span>&#128205;</span> Springfield, MO — Ozarks Region</li>
+        <li><span>&#128222;</span> <a href="tel:5550000000" style="color:rgba(255,255,255,0.75);text-decoration:none;">(555) 000-0000</a></li>
+        <li><span>&#128140;</span> <a href="mailto:info@adamplitudellc.com" style="color:rgba(255,255,255,0.75);text-decoration:none;">info@adampl
