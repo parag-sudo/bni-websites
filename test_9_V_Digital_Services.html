@@ -1,0 +1,1031 @@
+<!-- Website design by Think To Share — thinktoshare.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V Digital Services | Advertising Agency | Phoenix, AZ</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1a1a2e;
+    background: #ffffff;
+    line-height: 1.7;
+  }
+
+  /* ── COLOUR TOKENS ── */
+  :root {
+    --primary:   #6c2bd9;
+    --primary-d: #4e1fa8;
+    --accent:    #f72585;
+    --dark:      #0d0d1a;
+    --light:     #f4f0ff;
+    --mid:       #7b2ff7;
+    --grad: linear-gradient(135deg, #6c2bd9 0%, #f72585 100%);
+    --grad2: linear-gradient(135deg, #0d0d1a 0%, #1a1a4e 100%);
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13,13,26,.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--primary);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--grad);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: .5px;
+  }
+  .logo-text span { color: var(--accent); }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 500;
+    transition: color .3s;
+    position: relative;
+  }
+  nav a::after {
+    content:'';
+    position: absolute;
+    bottom:-3px; left:0;
+    width:0; height:2px;
+    background: var(--grad);
+    transition: width .3s;
+  }
+  nav a:hover { color:#fff; }
+  nav a:hover::after { width:100%; }
+  .nav-cta {
+    background: var(--grad);
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 700 !important;
+    transition: opacity .3s, transform .3s !important;
+  }
+  .nav-cta:hover { opacity:.85; transform: scale(1.05); }
+  .nav-cta::after { display:none !important; }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { width:25px; height:2px; background:#fff; display:block; transition:.3s; }
+  #nav-toggle { display:none; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: var(--grad2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(108,43,217,.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 40%, rgba(247,37,133,.3) 0%, transparent 55%);
+  }
+  .hero-content { position:relative; z-index:1; max-width: 860px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(108,43,217,.35);
+    border: 1px solid rgba(108,43,217,.6);
+    color: #c8a8ff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 22px;
+  }
+  .hero-content h1 span { background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .hero-content p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: #b8b8d4;
+    max-width: 640px;
+    margin: 0 auto 40px;
+  }
+  .hero-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary {
+    background: var(--grad);
+    color:#fff;
+    padding: 15px 36px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration:none;
+    transition: transform .3s, box-shadow .3s;
+    box-shadow: 0 6px 30px rgba(108,43,217,.45);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(108,43,217,.6); }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.4);
+    color: #fff;
+    padding: 15px 36px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration:none;
+    transition: background .3s, border-color .3s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,.1); border-color:#fff; }
+  .hero-stats {
+    display:flex;
+    justify-content:center;
+    gap:48px;
+    margin-top:60px;
+    flex-wrap:wrap;
+  }
+  .hero-stat h3 { font-size:2rem; font-weight:900; color:#fff; }
+  .hero-stat h3 span { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .hero-stat p { color:#9090b8; font-size:.85rem; text-transform:uppercase; letter-spacing:1px; }
+
+  /* ── SECTIONS GENERIC ── */
+  section { padding: 90px 5%; }
+  .section-label {
+    display:inline-block;
+    background: var(--light);
+    color: var(--primary);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight:900;
+    color: var(--dark);
+    margin-bottom:14px;
+    line-height:1.2;
+  }
+  .section-title span { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .section-sub { color:#666; max-width:580px; font-size:1.05rem; margin-bottom:50px; }
+  .center { text-align:center; }
+  .center .section-sub { margin-left:auto; margin-right:auto; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--light); }
+  .about-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:60px;
+    align-items:center;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .about-visual {
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    min-height:380px;
+    background: var(--grad2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:16px;
+    padding:40px;
+  }
+  .about-visual-icon { font-size:5rem; }
+  .about-visual h3 { color:#fff; font-size:1.6rem; font-weight:800; text-align:center; }
+  .about-visual p { color:#9090b8; text-align:center; font-size:.92rem; }
+  .about-badge {
+    position:absolute;
+    bottom:24px; right:24px;
+    background:var(--grad);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:14px;
+    font-weight:800;
+    font-size:.85rem;
+    text-align:center;
+    line-height:1.3;
+    box-shadow:0 6px 24px rgba(108,43,217,.4);
+  }
+  .about-content p { color:#444; margin-bottom:18px; font-size:1.03rem; }
+  .about-tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .tag {
+    background: rgba(108,43,217,.1);
+    border: 1px solid rgba(108,43,217,.25);
+    color: var(--primary);
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:.85rem;
+    font-weight:600;
+  }
+
+  /* ── SERVICES ── */
+  #services { background:#fff; }
+  .services-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:28px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .service-card {
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:18px;
+    padding:36px 30px;
+    transition: transform .35s, box-shadow .35s, border-color .35s;
+    position:relative;
+    overflow:hidden;
+  }
+  .service-card::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:4px;
+    background:var(--grad);
+    transform:scaleX(0);
+    transition:transform .35s;
+    transform-origin:left;
+  }
+  .service-card:hover::before { transform:scaleX(1); }
+  .service-card:hover { transform:translateY(-8px); box-shadow:0 20px 50px rgba(108,43,217,.13); border-color:var(--primary); }
+  .service-icon {
+    width:62px; height:62px;
+    background:var(--light);
+    border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.8rem;
+    margin-bottom:22px;
+    transition:background .35s;
+  }
+  .service-card:hover .service-icon { background:var(--grad); }
+  .service-card h3 { font-size:1.15rem; font-weight:800; color:var(--dark); margin-bottom:10px; }
+  .service-card p { color:#666; font-size:.93rem; line-height:1.6; }
+
+  /* ── WHY CHOOSE US ── */
+  #why { background: var(--grad2); padding:80px 5%; }
+  .why-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .why-card {
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
+    padding:36px 28px;
+    text-align:center;
+    transition:background .3s, transform .3s;
+  }
+  .why-card:hover { background:rgba(108,43,217,.25); transform:translateY(-5px); }
+  .why-icon { font-size:2.6rem; margin-bottom:16px; display:block; }
+  .why-card h3 { color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:10px; }
+  .why-card p { color:#9090b8; font-size:.9rem; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background:var(--light); }
+  .testi-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .testi-card {
+    background:#fff;
+    border-radius:18px;
+    padding:34px 30px;
+    box-shadow:0 4px 20px rgba(0,0,0,.06);
+    transition:transform .3s, box-shadow .3s;
+    position:relative;
+  }
+  .testi-card:hover { transform:translateY(-5px); box-shadow:0 14px 40px rgba(108,43,217,.12); }
+  .testi-quote {
+    font-size:3rem;
+    line-height:1;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:12px;
+    display:block;
+  }
+  .stars { color:#f4a636; font-size:1.1rem; letter-spacing:2px; margin-bottom:14px; }
+  .testi-card p { color:#555; font-size:.95rem; font-style:italic; margin-bottom:20px; }
+  .testi-author { display:flex; align-items:center; gap:12px; }
+  .testi-avatar {
+    width:46px; height:46px;
+    border-radius:50%;
+    background:var(--grad);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:800; font-size:1rem;
+  }
+  .testi-author h4 { font-size:.95rem; font-weight:700; color:var(--dark); }
+  .testi-author span { font-size:.82rem; color:#888; }
+
+  /* ── RESULTS (Industry Section) ── */
+  #results { background:#fff; }
+  .results-top {
+    background:var(--grad2);
+    border-radius:24px;
+    padding:60px 40px;
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:32px;
+    text-align:center;
+  }
+  .stat-box { padding:20px 10px; }
+  .stat-number {
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    font-weight:900;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    display:block;
+    line-height:1;
+  }
+  .stat-label { color:#9090b8; font-size:.9rem; margin-top:8px; letter-spacing:.5px; }
+  .stat-desc { color:#555; font-size:.82rem; margin-top:4px; }
+  .results-bars {
+    max-width:1100px;
+    margin:50px auto 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .bar-item { margin-bottom:22px; }
+  .bar-label { display:flex; justify-content:space-between; margin-bottom:8px; font-weight:600; font-size:.9rem; color:var(--dark); }
+  .bar-track { background:#eee; border-radius:10px; height:10px; overflow:hidden; }
+  .bar-fill {
+    height:100%;
+    border-radius:10px;
+    background:var(--grad);
+    animation:fillBar 1.5s ease forwards;
+  }
+  @keyframes fillBar { from{width:0} }
+
+  /* ── BLOG ── */
+  #blog { background:var(--light); }
+  .blog-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .blog-card {
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,.06);
+    transition:transform .3s, box-shadow .3s;
+  }
+  .blog-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(108,43,217,.12); }
+  .blog-thumb {
+    height:180px;
+    background:var(--grad2);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    padding:20px;
+  }
+  .blog-thumb-icon { font-size:3rem; }
+  .blog-thumb-label { color:#9090b8; font-size:.8rem; text-align:center; }
+  .blog-body { padding:28px 26px; }
+  .blog-meta { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .blog-cat {
+    background:var(--light);
+    color:var(--primary);
+    padding:3px 12px;
+    border-radius:12px;
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  .blog-date { color:#aaa; font-size:.8rem; }
+  .blog-body h3 { font-size:1.05rem; font-weight:800; color:var(--dark); margin-bottom:10px; line-height:1.4; }
+  .blog-body p { color:#666; font-size:.9rem; margin-bottom:18px; }
+  .btn-text {
+    color:var(--primary);
+    font-weight:700;
+    font-size:.9rem;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transition:gap .3s;
+  }
+  .btn-text:hover { gap:12px; }
+
+  /* ── CONTACT ── */
+  #contact { background:#fff; }
+  .contact-wrapper {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    max-width:1100px;
+    margin:0 auto;
+    align-items:start;
+  }
+  .contact-form { background:#fff; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .form-group { margin-bottom:18px; }
+  .form-group label { display:block; font-weight:600; font-size:.88rem; color:var(--dark); margin-bottom:6px; }
+  .form-group input,
+  .form-group textarea {
+    width:100%;
+    padding:12px 16px;
+    border:2px solid #e8e8f0;
+    border-radius:10px;
+    font-size:.95rem;
+    font-family:inherit;
+    transition:border-color .3s, box-shadow .3s;
+    color:var(--dark);
+    background:#fafafa;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(108,43,217,.1);
+    background:#fff;
+  }
+  .form-group textarea { resize:vertical; min-height:130px; }
+  .btn-submit {
+    background:var(--grad);
+    color:#fff;
+    border:none;
+    padding:15px 40px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    width:100%;
+    transition:opacity .3s, transform .3s;
+    box-shadow:0 6px 24px rgba(108,43,217,.35);
+  }
+  .btn-submit:hover { opacity:.85; transform:translateY(-2px); }
+  .contact-info { display:flex; flex-direction:column; gap:24px; }
+  .info-card {
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:22px;
+    background:var(--light);
+    border-radius:14px;
+  }
+  .info-icon {
+    width:46px; height:46px;
+    background:var(--grad);
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.2rem;
+    flex-shrink:0;
+    color:#fff;
+  }
+  .info-card h4 { font-size:.9rem; font-weight:700; color:var(--dark); margin-bottom:4px; }
+  .info-card p { color:#666; font-size:.9rem; }
+  .map-placeholder {
+    background:var(--grad2);
+    border-radius:14px;
+    height:180px;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    color:#fff;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:.5px;
+    margin-top:8px;
+  }
+  .map-placeholder span { font-size:2.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--dark);
+    padding:70px 5% 30px;
+  }
+  .footer-top {
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    margin-bottom:30px;
+  }
+  .footer-brand .logo-text { font-size:1.3rem; }
+  .footer-tagline { color:#666; font-size:.88rem; margin-top:12px; max-width:240px; line-height:1.7; }
+  .footer-socials { display:flex; gap:12px; margin-top:20px; }
+  .social-btn {
+    width:38px; height:38px;
+    background:rgba(255,255,255,.07);
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    color:#ccc;
+    font-size:1rem;
+    text-decoration:none;
+    transition:background .3s, color .3s, transform .3s;
+  }
+  .social-btn:hover { background:var(--grad); color:#fff; transform:translateY(-3px); }
+  .footer-col h4 { color:#fff; font-size:.95rem; font-weight:700; margin-bottom:18px; }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { margin-bottom:10px; }
+  .footer-col ul li a { color:#666; text-decoration:none; font-size:.88rem; transition:color .3s; }
+  .footer-col ul li a:hover { color:var(--accent); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .footer-bottom p { color:#444; font-size:.82rem; }
+  .footer-bottom a { color:var(--accent); text-decoration:none; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:900px) {
+    .about-grid { grid-template-columns:1fr; }
+    .contact-wrapper { grid-template-columns:1fr; }
+    .results-bars { grid-template-columns:1fr; }
+    .footer-top { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:680px) {
+    nav { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:rgba(13,13,26,.98); padding:20px; gap:16px; }
+    #nav-toggle:checked ~ nav { display:flex; }
+    .hamburger { display:flex; }
+    header { position:relative; }
+    header { position:sticky; }
+    .form-row { grid-template-columns:1fr; }
+    .footer-top { grid-template-columns:1fr; }
+    .hero-stats { gap:28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+  <a href="#home" class="logo">
+    <div class="logo-icon">VD</div>
+    <span class="logo-text">V Digital <span>Services</span></span>
+  </a>
+  <input type="checkbox" id="nav-toggle">
+  <label for="nav-toggle" class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </label>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </nav>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge">&#9733; Phoenix's Premier Advertising Agency</div>
+    <h1>Elevate Your Brand with<br><span>V Digital Services</span></h1>
+    <p>We craft data-driven advertising strategies and creative campaigns that ignite growth, amplify your reach, and turn audiences into loyal customers — right here in Phoenix, AZ and beyond.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">&#128221; Get a Free Quote</a>
+      <a href="tel:5550000000" class="btn-outline">&#128222; Call Now</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><h3><span>500</span>+</h3><p>Campaigns Launched</p></div>
+      <div class="hero-stat"><h3><span>98</span>%</h3><p>Client Retention</p></div>
+      <div class="hero-stat"><h3><span>12</span>+</h3><p>Years of Excellence</p></div>
+      <div class="hero-stat"><h3><span>3.2</span>x</h3><p>Avg. ROI Delivered</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-visual-icon">&#128640;</div>
+      <h3>Built for Growth</h3>
+      <p>Phoenix, AZ's trusted advertising partner since day one</p>
+      <div class="about-badge">&#9733; 5-Star<br>Rated Agency</div>
+    </div>
+    <div class="about-content">
+      <span class="section-label">About Us</span>
+      <h2 class="section-title">We're <span>V Digital Services</span> — Your Growth Partner</h2>
+      <p>Founded by Grace Somers, V Digital Services has grown into one of Phoenix, Arizona's most respected advertising agencies, dedicated to helping businesses of every size break through the noise and connect with their ideal audiences. Grace brings a rare combination of creative vision and analytical precision, ensuring every campaign we build is both imaginative and measurably effective.</p>
+      <p>Based in the heart of Phoenix, AZ, our team understands the unique pulse of the local market while delivering campaigns with national-level quality. We partner closely with each client, taking time to understand their goals, brand identity, and competitive landscape before crafting a strategy that drives real, lasting results.</p>
+      <p>At V Digital Services, trust is the cornerstone of everything we do. Our transparent reporting, proactive communication, and proven track record make us the agency that Phoenix businesses return to year after year for advertising that truly performs.</p>
+      <div class="about-tags">
+        <span class="tag">&#10003; Strategy-First</span>
+        <span class="tag">&#10003; Data-Driven</span>
+        <span class="tag">&#10003; Locally Rooted</span>
+        <span class="tag">&#10003; Creative Excellence</span>
+        <span class="tag">&#10003; Transparent Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services">
+  <div class="center">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Comprehensive <span>Advertising Solutions</span></h2>
+    <p class="section-sub">From bold brand campaigns to precision digital targeting, V Digital Services delivers the full spectrum of advertising services your business needs to grow.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">&#127919;</div>
+      <h3>Brand Strategy & Identity</h3>
+      <p>We build powerful brand foundations — from positioning and messaging to visual identity — ensuring your business stands out and resonates deeply with your target market.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128241;</div>
+      <h3>Social Media Advertising</h3>
+      <p>Precision-targeted ad campaigns across Facebook, Instagram, LinkedIn, and TikTok designed to capture attention, build community, and convert followers into customers.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128269;</div>
+      <h3>Search Engine Marketing (SEM)</h3>
+      <p>Dominate Google and Bing search results with expertly managed PPC campaigns. We maximize every ad dollar through continuous optimization and smart bidding strategies.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128250;</div>
+      <h3>Video & Creative Production</h3>
+      <p>Compelling video ads, animated content, and creative assets that stop the scroll. Our in-house creative team brings your brand story to life across all formats and platforms.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128202;</div>
+      <h3>Programmatic Display Advertising</h3>
+      <p>Reach your ideal customer at precisely the right moment with AI-powered programmatic display and retargeting campaigns that deliver measurable impressions and conversions.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">&#128187;</div>
+      <h3>Digital Campaign Analytics</h3>
+      <p>In-depth performance reporting, attribution modeling, and actionable insights that keep your campaigns optimized and your marketing ROI continuously improving month over month.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHY CHOOSE US ══════════ -->
+<section id="why">
+  <div class="center" style="margin-bottom:50px;">
+    <span class="section-label" style="background:rgba(255,255,255,.1);color:#c8a8ff;">Why Choose Us</span>
+    <h2 class="section-title" style="color:#fff;">The <span>V Digital</span> Difference</h2>
+    <p class="section-sub" style="color:#9090b8;margin-left:auto;margin-right:auto;">Four powerful reasons why Phoenix businesses choose V Digital Services as their advertising partner.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">&#127942;</span>
+      <h3>Award-Winning Agency</h3>
+      <p>Recognized across the advertising industry for creative excellence and exceptional client results year after year.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">&#128200;</span>
+      <h3>Proven ROI Results</h3>
+      <p>Our campaigns deliver an average 3.2x return on ad spend. We measure success by your bottom line, not just metrics.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">&#127968;</span>
+      <h3>Local Phoenix Experts</h3>
+      <p>Deeply rooted in the Phoenix, AZ market, we understand the local landscape and consumer behavior like no other agency.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">&#128313;</span>
+      <h3>Full Transparency</h3>
+      <p>Real-time dashboards, plain-English reporting, and honest strategy — you always know exactly where your budget goes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section id="testimonials">
+  <div class="center">
+    <span class="section-label">Client Love</span>
+    <h2 class="section-title">What Phoenix Businesses <span>Say About Us</span></h2>
+    <p class="section-sub">Don't just take our word for it. Here's what our clients have to say about working with V Digital Services.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <span class="testi-quote">&#8220;</span>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>Grace and the V Digital Services team completely transformed our advertising presence in Phoenix. Our social media campaigns now generate more qualified leads in a week than we used to see in a month. The ROI has been nothing short of incredible — I can't recommend them highly enough.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MR</div>
+        <div>
+          <h4>Marcus Rivera</h4>
+          <span>Owner, Sonoran Home Builders — Phoenix, AZ</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">&#8220;</span>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>We brought V Digital Services in to relaunch our brand identity and run our Google Ads. The results were immediate — our cost-per-click dropped 40% and conversions tripled within 60 days. Grace's team is strategic, creative, and genuinely invested in your success. Truly a world-class agency.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">LT</div>
+        <div>
+          <h4>Lindsey Torres</h4>
+          <span>CEO, Desert Peak Medical Group — Scottsdale, AZ</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">&#8220;</span>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>As a small business competing against big national brands, I was skeptical. But V Digital Services leveled the playing field for us. Their programmatic advertising and creative video production gave us a professional presence we never thought possible at our budget. Phoenix lucky to have them!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JP</div>
+        <div>
+          <h4>James Pollock</h4>
+          <span>Founder, Cactus State Auto — Mesa, AZ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RESULTS (Industry Section) ══════════ -->
+<section id="results">
+  <div class="center">
+    <span class="section-label">Our Results</span>
+    <h2 class="section-title">Numbers That <span>Speak for Themselves</span></h2>
+    <p class="section-sub">Real performance data from real V Digital Services campaigns. We let the results do the talking.</p>
+  </div>
+  <div class="results-top">
+    <div class="stat-box">
+      <span class="stat-number">$48M+</span>
+      <div class="stat-label">Ad Spend Managed</div>
+      <div class="stat-desc">Across all platforms & channels</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">320%</span>
+      <div class="stat-label">Average ROAS</div>
+      <div class="stat-desc">Return on ad spend delivered</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">2.1M+</span>
+      <div class="stat-label">Leads Generated</div>
+      <div class="stat-desc">For clients across all industries</div>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">98%</span>
+      <div class="stat-label">Client Retention</div>
+      <div class="stat-desc">Year-over-year client loyalty</div>
+    </div>
+  </div>
+  <div class="results-bars">
+    <div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Social Media Ad Performance</span><span>94%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Search Engine Campaign Success</span><span>91%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Brand Awareness Growth</span><span>88%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Client Goal Achievement Rate</span><span>97%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:97%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Programmatic Ad Efficiency</span><span>85%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>&#128313; Video Campaign Engagement</span><span>92%</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BLOG ══════════ -->
+<section id="blog">
+  <div class="center">
+    <span class="section-label">Insights & Ideas</span>
+    <h2 class="section-title">From the <span>V Digital Blog</span></h2>
+    <p class="section-sub">Stay ahead of the curve with expert advertising and marketing insights from our Phoenix team.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-thumb">
+        <div class="blog-thumb-icon">&#128202;</div>
+        <div class="blog-thumb-label">Advertising Strategy</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Strategy</span>
+          <span class="blog-date">&#128197; June 12, 2025</span>
+        </div>
+        <h3>5 Advertising Trends Every Phoenix Business Must Know in 2025</h3>
+        <p>From AI-driven creative to hyper-local targeting, discover the advertising shifts reshaping how Phoenix brands connect with customers this year and beyond.</p>
+        <a href="#" class="btn-text">Read More &#8594;</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">
+        <div class="blog-thumb-icon">&#128241;</div>
+        <div class="blog-thumb-label">Social Media Marketing</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Social Media</span>
+          <span class="blog-date">&#128197; May 28, 2025</span>
+        </div>
+        <h3>Why Your Social Media Ads Aren't Converting — And How to Fix It</h3>
+        <p>Poor creative, wrong audiences, or bad landing pages? We break down the top reasons social ad campaigns fail and the exact steps V Digital takes to turn them around.</p>
+        <a href="#" class="btn-text">Read More &#8594;</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">
+        <div class="blog-thumb-icon">&#127919;</div>
+        <div class="blog-thumb-label">Brand & Identity</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Branding</span>
+          <span class="blog-date">&#128197; May 10, 2025</span>
+        </div>
+        <h3>How Strong Brand Identity Multiplies Your Advertising ROI</h3>
+        <p>Before you spend another dollar on ads, make sure your brand foundation is solid. Learn how cohesive identity dramatically improves the performance of every campaign you run.</p>
+        <a href="#" class="btn-text">Read More &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="center">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Let's Build Something <span>Amazing Together</span></h2>
+    <p class="section-sub">Ready to accelerate your growth? Reach out to V Digital Services today for a free strategy consultation.</p>
+  </div>
+  <div class="contact-wrapper">
+    <div class="contact-form">
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <input type="text" id="service" placeholder="e.g. Social Media Advertising, Brand Strategy...">
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" placeholder="Tell us about your advertising goals and how we can help..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">&#128640; Send Message — Get Free Consultation</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <div class="info-card">
+        <div class="info-icon">&#128205;</div>
+        <div>
+          <h4>Our Location</h4>
+          <p>V Digital Services<br>Phoenix, AZ 85001<br>Serving the Greater Phoenix Metro Area</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">&#128222;</div>
+        <div>
+          <h4>Phone Number</h4>
+          <p>(555) 000-0000<br>Mon–Fri: 8:00 AM – 6:00 PM MST</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">&#128140;</div>
+        <div>
+          <h4>Email Address</h4>
+          <p>info@vdigitalservices.com<br>We respond within 24 business hours</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">&#9201;</div>
+        <div>
+          <h4>Office Hours</h4>
+          <p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: By Appointment Only</p>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <span>&#128506;</span>
+        <p>Find Us Here</p>
+        <small style="color:#9090b8;font-size:.8rem;font-weight:400;">Phoenix, AZ — Greater Metro Area</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">VD</div>
+        <span class="logo-text">V Digital <span>Services</span></span>
+      </div>
+      <p class="footer-tagline">Phoenix's premier advertising agency crafting data-driven campaigns that deliver real, measurable growth for businesses of every size.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn" aria-label="Facebook">&#128241;</a>
+        <a href="#" class="social-btn" aria-label="Instagram">&#128247;</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn">&#128188;</a>
+        <a href="#" class="social-btn" aria-label="Twitter">&#128038;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#services">Brand Strategy</a></li>
+        <li><a href="#services">Social Media Ads</a></li>
+        <li><a href="#services">Search Marketing</a></li>
+        <li><a href="#services">Video Production</a></li>
+        <li><a href="#services">Programmatic Ads</a></li>
+        <li><a href="#services">Campaign Analytics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Info</h4>
+      <ul>
+        <li><a href="#">&#128205; Phoenix, AZ 85001</a></li>
+        <li><a href="tel:5550000000">&#128222; (555) 000-0000</a></li>
+        <li><a href="mailto:info@vdigitalservices.com">&#128140; info@vdigitalservices.com</a></li>
+        <li><a href="#">&#9201; Mon–Fri: 8AM–6PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 V Digital Services. All Rights Reserved. | Founded by Grace Somers | Phoenix, AZ</p>
+    <p>Website design by <a href="https://thinktoshare.com" target="_blank">Think To Share</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
