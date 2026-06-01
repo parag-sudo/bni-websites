@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ghostwriting India | Ghostwriting Services | Temecula</title>
-<meta name="description" content="Transform your story into powerful words that heal and inspire.">
+<meta name="description" content="Transform your deepest stories into powerful, healing words that resonate and inspire.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --primary: #1a73e8;
+    --primary: #6366f1;
     --secondary: #1A1A2E;
     --dark: #111827;
     --text: #374151;
@@ -21,8 +22,25 @@
     --muted: #94A3B8;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  body { font-family: 'Lato', -apple-system, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', sans-serif; }
   a { text-decoration: none; color: inherit; }
+
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInLeft { from { opacity:0; transform:translateX(-32px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes fadeInRight { from { opacity:0; transform:translateX(32px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.92); } to { opacity:1; transform:scale(1); } }
+  @keyframes gradientShift { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+  .anim-1 { animation:fadeInUp 0.7s ease both; }
+  .anim-2 { animation:fadeInUp 0.7s 0.15s ease both; }
+  .anim-3 { animation:fadeInUp 0.7s 0.3s ease both; }
+  .anim-4 { animation:fadeInUp 0.7s 0.45s ease both; }
+  .anim-5 { animation:fadeInUp 0.7s 0.6s ease both; }
+  .anim-left { animation:fadeInLeft 0.7s ease both; }
+  .anim-right { animation:fadeInRight 0.7s ease both; }
+  .anim-scale { animation:scaleIn 0.6s ease both; }
+  .float { animation:float 4s ease-in-out infinite; }
 
   /* HEADER */
   header { position: sticky; top: 0; z-index: 1000; background: var(--secondary); box-shadow: 0 2px 20px rgba(0,0,0,0.3); padding: 0 2rem; }
@@ -38,16 +56,16 @@
 
   /* HERO */
   .hero { min-height: 100vh; background: linear-gradient(135deg, #0D0D1A 0%, #1A1A2E 40%, #0F3460 100%); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 20% 50%, #1a73e826 0%, transparent 60%), radial-gradient(ellipse 600px 500px at 80% 30%, #1a73e81a 0%, transparent 60%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 20% 50%, #6366f126 0%, transparent 60%), radial-gradient(ellipse 600px 500px at 80% 30%, #6366f11a 0%, transparent 60%); }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
   .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 2rem; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #1a73e826; border: 1px solid #1a73e866; color: #1a73e8; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #6366f126; border: 1px solid #6366f166; color: #6366f1; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
   .hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -1px; }
   .hero h1 span { color: var(--primary); }
   .hero-tagline { font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: #94A3B8; margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-  .btn-primary { background: var(--primary); color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 20px #1a73e866; transition: all 0.3s; display: inline-block; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #1a73e880; }
+  .btn-primary { background: var(--primary); color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 20px #6366f166; transition: all 0.3s; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #6366f180; }
   .btn-outline { background: transparent; color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; display: inline-block; }
   .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
   .hero-stats { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -64,7 +82,7 @@
   .about-visual { background: var(--secondary); border-radius: 20px; padding: 3rem; position: relative; overflow: hidden; }
   .about-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: var(--primary); opacity: 0.15; }
   .owner-block { position: relative; z-index: 1; }
-  .owner-avatar { width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), #1a73e888); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; }
+  .owner-avatar { width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), #6366f188); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; }
   .owner-name { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem; }
   .owner-role { font-size: 0.88rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
   .owner-bio { font-size: 0.9rem; color: #94A3B8; line-height: 1.7; }
@@ -80,6 +98,34 @@
   .svc-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
   .svc-title { font-weight: 700; font-size: 1rem; color: var(--dark); margin-bottom: 0.4rem; }
   .svc-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+  /* RESULTS */
+  .results { padding: 6rem 2rem; background: linear-gradient(135deg, #0D0D1A 0%, #1A1A2E 100%); position: relative; overflow: hidden; }
+  .results-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .result-item { text-align: center; }
+  .result-num { font-size: clamp(2.5rem,4vw,3.5rem); font-weight: 900; color: #fff; display: block; line-height: 1; margin-bottom: 0.5rem; }
+  .result-num span { color: var(--primary); }
+  .result-label { font-size: 0.9rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+  .result-bar { width: 40px; height: 3px; background: var(--primary); margin: 0.8rem auto 0; border-radius: 2px; }
+  .results-cta { text-align: center; margin-top: 3.5rem; }
+  .results-cta p { color: #94A3B8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+  /* BLOG */
+  .blog { padding: 6rem 2rem; background: var(--light-gray); }
+  .blog-inner { max-width: 1200px; margin: 0 auto; }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .blog-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: all 0.3s; }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+  .blog-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+  .blog-content { padding: 1.5rem; }
+  .blog-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem; }
+  .blog-date { font-size: 0.78rem; color: var(--gray); }
+  .blog-category { background: #6366f114; color: var(--primary); padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 0.7rem; }
+  .blog-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.2rem; }
+  .btn-read-more { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--primary); font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: gap 0.2s; }
+  .btn-read-more:hover { gap: 0.6rem; }
 
   /* WHY US */
   .why { padding: 5rem 2rem; background: var(--secondary); }
@@ -153,6 +199,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#blog">Blog</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
       <a href="#contact" class="nav-cta">Get In Touch</a>
@@ -163,11 +210,11 @@
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-badge">&#10022; Ghostwriting Services · Temecula</div>
-    <h1>Ghostwriting <span>India</span></h1>
-    <p class="hero-tagline">Transform your story into powerful words that heal and inspire.</p>
-    <div class="hero-btns"><a href="tel:8910116700" class="btn-primary">&#128222; 8910116700</a><a href="mailto:audit.thinktoshare@gmail.com" class="btn-outline">&#9993; audit.thinktoshare@gmail.com</a></div>
-    <div class="hero-stats">
+    <div class="hero-badge anim-1">&#10022; Ghostwriting Services · Temecula</div>
+    <h1 class="anim-2">Ghostwriting <span>India</span></h1>
+    <p class="hero-tagline anim-3">Transform your deepest stories into powerful, healing words that resonate and inspire.</p>
+    <div class="hero-btns anim-4"><a href="tel:8910116700" class="btn-primary">&#128222; 8910116700</a><a href="mailto:audit.thinktoshare@gmail.com" class="btn-outline">&#9993; audit.thinktoshare@gmail.com</a></div>
+    <div class="hero-stats anim-5">
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Client Focus</div></div>
       <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Services</div></div>
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
@@ -177,13 +224,13 @@
 
 <section class="about" id="about">
   <div class="about-inner">
-    <div>
+    <div class="anim-left">
       <div class="section-tag">About Us</div>
       <h2 class="section-title">Who We Are</h2>
-      <p class="about-desc">Ghostwriting India, founded by Audit Think To Share, specializes in turning personal narratives about mental health, trauma, and life challenges into compelling written content. Based in Temecula, we provide expert ghostwriting, copywriting, and screenplay services for authors seeking to share their journeys with anxiety, depression, addiction, and gender-specific issues. Our mission is to give voice to untold stories that create connection, understanding, and healing.</p>
+      <p class="about-desc">Ghostwriting India, led by Audit Think To Share, specializes in authentic storytelling that addresses life's most challenging topics. Based in Temecula, we combine expert copywriting, meticulous proofreading, and compelling screenplay writing to give voice to experiences surrounding anxiety, depression, trauma, and personal struggles. Our mission is to help individuals and organizations share their narratives with sensitivity, impact, and professional excellence.</p>
       <a href="tel:8910116700" class="btn-primary">&#128222; 8910116700</a>
     </div>
-    <div class="about-visual">
+    <div class="about-visual anim-right float">
       <div class="owner-block">
         <div class="owner-avatar">GI</div>
         <div class="owner-name">Audit Think To Share</div>
@@ -202,23 +249,68 @@
       <h2 class="section-title">Our Services</h2>
     </div>
     <div class="svc-grid"><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9733;</div>
-          <div><div class="svc-title">Ghostwriting for memoirs and personal narratives</div><p class="svc-desc">Professional ghostwriting for memoirs and personal narratives tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9733;</div>
+          <div><div class="svc-title">Professional Copywriting for Mental Health Content</div><p class="svc-desc">Professional professional copywriting for mental health content tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9654;</div>
-          <div><div class="svc-title">Professional copywriting for mental health awareness campaigns</div><p class="svc-desc">Professional professional copywriting for mental health awareness campaigns tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9654;</div>
+          <div><div class="svc-title">Therapeutic Narrative Development</div><p class="svc-desc">Professional therapeutic narrative development tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9670;</div>
-          <div><div class="svc-title">Screenplay writing for therapeutic storytelling</div><p class="svc-desc">Professional screenplay writing for therapeutic storytelling tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9670;</div>
+          <div><div class="svc-title">Screenplay Writing for Sensitive Topics</div><p class="svc-desc">Professional screenplay writing for sensitive topics tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9632;</div>
-          <div><div class="svc-title">Proofreading and editing for published works</div><p class="svc-desc">Professional proofreading and editing for published works tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9632;</div>
+          <div><div class="svc-title">Proofreading and Editing Services</div><p class="svc-desc">Professional proofreading and editing services tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9650;</div>
-          <div><div class="svc-title">Content development for anxiety and depression platforms</div><p class="svc-desc">Professional content development for anxiety and depression platforms tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9650;</div>
+          <div><div class="svc-title">Personal Memoir and Story Documentation</div><p class="svc-desc">Professional personal memoir and story documentation tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#1a73e822;color:#1a73e8">&#9679;</div>
-          <div><div class="svc-title">Author coaching for trauma-informed storytelling</div><p class="svc-desc">Professional author coaching for trauma-informed storytelling tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9679;</div>
+          <div><div class="svc-title">Recovery and Wellness Content Creation</div><p class="svc-desc">Professional recovery and wellness content creation tailored to your business goals.</p></div>
+        </div></div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="results-inner">
+    <div class="section-tag" style="color:#6366f1">Our Results</div>
+    <h2 class="section-title" style="color:#fff;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;letter-spacing:-.5px;margin-bottom:.5rem">Numbers That Speak</h2>
+    <p style="color:#94A3B8;margin-bottom:0">Real outcomes achieved for real businesses.</p>
+    <div class="results-grid"><div class="result-item"><span class="result-num">500+</span><p class="result-label">Stories Brought to Life</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">98%</span><p class="result-label">Client Satisfaction Rate</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">15+</span><p class="result-label">Years Combined Experience</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">24/7</span><p class="result-label">Client Support</p><div class="result-bar"></div></div></div>
+    <div class="results-cta">
+      <p>Ready to add your success story to our track record?</p>
+      <a href="tel:8910116700" class="btn-primary">&#128222; 8910116700</a>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="blog-inner">
+    <div class="section-tag">Our Blog</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;letter-spacing:-.5px">Ghostwriting Services Insights &amp; Trends</h2>
+    <div class="blog-grid"><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#1A1A2E 0%,#6366f1 100%)">&#128227;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">May 2025</span><span class="blog-category">Tips</span></div>
+            <h3>Writing Your Mental Health Story: 5 Essential Steps</h3>
+            <p>Discover how to authentically articulate your journey with anxiety and depression through powerful storytelling techniques.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
+        </div><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#0F3460 0%,#6366f1cc 100%)">&#128269;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">April 2025</span><span class="blog-category">Insights</span></div>
+            <h3>The Healing Power of Sharing Trauma Through Words</h3>
+            <p>Explore how ghostwriting can transform personal trauma into narratives that heal both writer and reader.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
+        </div><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#6366f1 0%,#1A1A2E 100%)">&#127775;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">March 2025</span><span class="blog-category">Guide</span></div>
+            <h3>Screenplay Writing for Recovery Stories: A Complete Guide</h3>
+            <p>Learn how to craft compelling screenplays that authentically represent addiction recovery and personal transformation.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
         </div></div>
   </div>
 </section>
@@ -226,10 +318,10 @@
 <section class="why" id="why">
   <div class="why-inner">
     <div class="why-header">
-      <div class="section-tag" style="color:#1a73e8">Why Choose Us</div>
+      <div class="section-tag" style="color:#6366f1">Why Choose Us</div>
       <h2 class="section-title" style="color:#fff">What Sets Us Apart</h2>
     </div>
-    <div class="why-grid"><div class="why-item"><div class="why-icon" style="background:#1a73e822;color:#1a73e8">&#10003;</div><div><div class="why-title">Deep expertise in sensitive topics including trauma, anxiety, depression, addiction, and gender-specific issues with compassionate storytelling</div></div></div><div class="why-item"><div class="why-icon" style="background:#1a73e822;color:#1a73e8">&#9654;</div><div><div class="why-title">Full-service approach from concept to final polish with professional copywriting, screenplay, and proofreading specialists</div></div></div><div class="why-item"><div class="why-icon" style="background:#1a73e822;color:#1a73e8">&#9733;</div><div><div class="why-title">Commitment to authentic voice and healing narratives that resonate with readers and create meaningful impact</div></div></div></div>
+    <div class="why-grid"><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#10003;</div><div><div class="why-title">Deep expertise in writing about anxiety, depression, trauma, and wellness with compassion and accuracy</div></div></div><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#9654;</div><div><div class="why-title">Comprehensive services from initial concept through final polish with dedicated support</div></div></div><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#9733;</div><div><div class="why-title">Proven track record helping clients transform personal struggles into meaningful, publishable content</div></div></div></div>
   </div>
 </section>
 
@@ -241,24 +333,24 @@
     </div>
     <div class="testi-grid"><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"Ghostwriting India understood my trauma story like no one else. They transformed my scattered thoughts into a powerful memoir that helps others feel less alone."</p>
+          <p class="testi-text">"Ghostwriting India helped me transform my personal journey with depression into a memoir that truly resonates with readers."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#1a73e8">S</div>
+            <div class="testi-avatar" style="background:#6366f1">S</div>
             <div><div class="testi-name">Sarah Mitchell</div><div class="testi-role">Author, Mental Health Advocate</div></div>
           </div>
         </div><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"Their copywriting for my recovery program was incredibly impactful. The words resonated deeply with men facing similar battles."</p>
+          <p class="testi-text">"Their screenplay writing captured the nuance and dignity of addiction recovery stories in ways I never imagined possible."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#1a73e8">M</div>
-            <div><div class="testi-name">Michael Torres</div><div class="testi-role">Addiction Recovery Educator</div></div>
+            <div class="testi-avatar" style="background:#6366f1">J</div>
+            <div><div class="testi-name">James Rodriguez</div><div class="testi-role">Documentary Producer</div></div>
           </div>
         </div><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"I recommended Ghostwriting India to multiple clients. Their screenplay adaptation of therapeutic narratives is truly transformative work."</p>
+          <p class="testi-text">"The proofreading and copywriting services elevated our trauma-informed content to professional publishing standards."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#1a73e8">D</div>
-            <div><div class="testi-name">Dr. Jennifer Walsh</div><div class="testi-role">Clinical Psychologist</div></div>
+            <div class="testi-avatar" style="background:#6366f1">D</div>
+            <div><div class="testi-name">Dr. Emily Chen</div><div class="testi-role">Psychologist and Wellness Coach</div></div>
           </div>
         </div></div>
   </div>
@@ -282,7 +374,7 @@
         </div>
         <div class="form-row">
           <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone"></div>
-          <div class="form-group"><label>Service</label><select><option value="">Select a service...</option><option>Ghostwriting for memoirs and personal narratives</option><option>Professional copywriting for mental health awareness campaigns</option><option>Screenplay writing for therapeutic storytelling</option><option>Proofreading and editing for published works</option><option>Content development for anxiety and depression platforms</option><option>Author coaching for trauma-informed storytelling</option></select></div>
+          <div class="form-group"><label>Service</label><select><option value="">Select a service...</option><option>Professional Copywriting for Mental Health Content</option><option>Therapeutic Narrative Development</option><option>Screenplay Writing for Sensitive Topics</option><option>Proofreading and Editing Services</option><option>Personal Memoir and Story Documentation</option><option>Recovery and Wellness Content Creation</option></select></div>
         </div>
         <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your needs..."></textarea></div>
         <button type="submit" class="btn-submit">&#128293; Send Message</button>
@@ -299,7 +391,7 @@
           <div class="logo-icon" style="width:36px;height:36px;font-size:.9rem">GI</div>
           <div class="logo-text"><span class="brand" style="color:#fff">Ghostwriting India</span><span class="sub">Temecula</span></div>
         </a>
-        <p>Ghostwriting India, founded by Audit Think To Share, specializes in turning personal narratives about mental health, tra...</p>
+        <p>Ghostwriting India, led by Audit Think To Share, specializes in authentic storytelling that addresses life's most challe...</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -312,7 +404,7 @@
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <ul><li><a href='#services'>Ghostwriting for memoirs and personal narratives</a></li><li><a href='#services'>Professional copywriting for mental health awareness campaigns</a></li><li><a href='#services'>Screenplay writing for therapeutic storytelling</a></li><li><a href='#services'>Proofreading and editing for published works</a></li><li><a href='#services'>Content development for anxiety and depression platforms</a></li><li><a href='#services'>Author coaching for trauma-informed storytelling</a></li></ul>
+        <ul><li><a href='#services'>Professional Copywriting for Mental Health Content</a></li><li><a href='#services'>Therapeutic Narrative Development</a></li><li><a href='#services'>Screenplay Writing for Sensitive Topics</a></li><li><a href='#services'>Proofreading and Editing Services</a></li><li><a href='#services'>Personal Memoir and Story Documentation</a></li><li><a href='#services'>Recovery and Wellness Content Creation</a></li></ul>
       </div>
     </div>
     <div class="footer-bottom">
