@@ -7,63 +7,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #f5f7ff; line-height: 1.6; }
-  header { background: #1a1a2e; color: #fff; padding: 48px 24px; text-align: center; }
-  header h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: 1px; color: #7c83fd; }
-  header p { font-size: 1.1rem; margin-top: 10px; color: #c9cbff; }
-  section { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
-  h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #7c83fd; padding-left: 12px; }
-  p { font-size: 1rem; color: #444; margin-bottom: 12px; }
-  ul { list-style: none; padding: 0; }
-  ul li { background: #fff; border: 1px solid #e0e3ff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; font-size: 1rem; color: #333; }
-  ul li::before { content: "✦ "; color: #7c83fd; font-weight: 700; }
-  .contact-box { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 32px; text-align: center; }
-  .contact-box p { color: #c9cbff; margin-bottom: 8px; font-size: 1rem; }
-  .contact-box a { color: #7c83fd; text-decoration: none; font-weight: 600; }
-  .contact-box a:hover { text-decoration: underline; }
-  footer { text-align: center; padding: 20px; font-size: 0.85rem; color: #888; background: #eef0ff; }
-  .divider { border: none; border-top: 1px solid #dde0ff; margin: 0 24px; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #f4f7fc; }
+  header { background: #1a73e8; color: white; padding: 50px 20px; text-align: center; }
+  header h1 { font-size: 2.5em; font-weight: 700; letter-spacing: 1px; }
+  header p { font-size: 1.1em; margin-top: 10px; opacity: 0.9; }
+  section { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  h2 { font-size: 1.6em; font-weight: 700; color: #1a73e8; margin-bottom: 15px; border-bottom: 2px solid #1a73e8; padding-bottom: 8px; }
+  p { font-size: 1em; line-height: 1.7; color: #333; }
+  ul { list-style: none; padding: 0; margin-top: 10px; }
+  ul li { padding: 10px 0; font-size: 1em; color: #333; border-bottom: 1px solid #e0e0e0; }
+  ul li:last-child { border-bottom: none; }
+  ul li::before { content: "✔ "; color: #1a73e8; font-weight: bold; }
+  .contact-info { margin-top: 15px; }
+  .contact-info a { display: block; font-size: 1em; color: #1a73e8; text-decoration: none; margin-bottom: 10px; }
+  .contact-info a:hover { text-decoration: underline; }
+  footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 20px; font-size: 0.85em; }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Call Mate</h1>
-  <p>Intelligent AI Calling Software — Your Smart Voice Agent</p>
+  <p>Intelligent AI Calling — Smarter Conversations, Better Results</p>
 </header>
 
 <section id="about">
   <h2>About Us</h2>
-  <p>Call Mate is an AI-powered calling software solution based in Cumming, built to transform how businesses communicate. Founded by Souranka Ghosh, our platform delivers intelligent call automation and seamless voice agent technology.</p>
-  <p>We help businesses reduce manual effort, extract valuable insights from calls, and engage customers with smart, human-like AI agents around the clock.</p>
+  <p>Call Mate is a cutting-edge AI calling software based in Cumming, built to transform how businesses handle voice communication. Founded by Souranka Ghosh, we specialize in AI-powered calling agents that automate outreach and extract meaningful insights from every call. Our mission is to help businesses save time, boost efficiency, and never miss a valuable conversation.</p>
 </section>
-
-<hr class="divider">
 
 <section id="services">
   <h2>Our Services</h2>
   <ul>
-    <li>AI Calling Agent — Automated voice agents that handle inbound and outbound calls intelligently</li>
-    <li>Call Data Extraction — Automatically extract key information, summaries, and insights from every call</li>
-    <li>Lead Engagement Automation — Reach and qualify leads at scale without lifting a finger</li>
-    <li>Custom Call Workflows — Tailored calling flows designed to match your specific business needs</li>
+    <li>AI Calling Agent — Automated outbound and inbound call handling powered by advanced AI</li>
+    <li>Call Extraction — Instantly extract key data, summaries, and action items from calls</li>
+    <li>Lead Follow-Up Automation — Let AI handle follow-up calls so your team can focus on closing</li>
+    <li>Call Analytics & Reporting — Get detailed insights and performance metrics from every interaction</li>
   </ul>
 </section>
 
-<hr class="divider">
-
 <section id="contact">
-  <h2>Get In Touch</h2>
-  <div class="contact-box">
-    <p>Ready to supercharge your business calls? Reach out to us today.</p>
-    <p>📧 <a href="mailto:sourankaghosh@gmail.com">sourankaghosh@gmail.com</a></p>
-    <p>📞 <a href="tel:7044780755">(704) 478-0755</a></p>
-    <p style="margin-top:16px; color:#aaa; font-size:0.9rem;">Cumming, GA &nbsp;|&nbsp; Owner: Souranka Ghosh</p>
+  <h2>Contact Us</h2>
+  <p>Ready to put your calling on autopilot? Reach out to us today.</p>
+  <div class="contact-info">
+    <a href="mailto:sourankaghosh@gmail.com">📧 sourankaghosh@gmail.com</a>
+    <a href="tel:7044780755">📞 (704) 478-0755</a>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2024 Call Mate. All rights reserved.</p>
+  <p>&copy; 2024 Call Mate. All rights reserved. | Cumming | Owner: Souranka Ghosh</p>
 </footer>
 
 </body>
