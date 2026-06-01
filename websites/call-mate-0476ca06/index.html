@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Call Mate | AI Calling Software | Cumming</title>
-<meta name="description" content="Automate your calling workflow with intelligent AI agents that extract data and drive results.">
+<meta name="description" content="AI-powered calling agents that extract data and close deals on autopilot.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --primary: #6366f1;
+    --primary: #4f46e5;
     --secondary: #1A1A2E;
     --dark: #111827;
     --text: #374151;
@@ -21,8 +22,25 @@
     --muted: #94A3B8;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; }
   a { text-decoration: none; color: inherit; }
+
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInLeft { from { opacity:0; transform:translateX(-32px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes fadeInRight { from { opacity:0; transform:translateX(32px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.92); } to { opacity:1; transform:scale(1); } }
+  @keyframes gradientShift { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+  .anim-1 { animation:fadeInUp 0.7s ease both; }
+  .anim-2 { animation:fadeInUp 0.7s 0.15s ease both; }
+  .anim-3 { animation:fadeInUp 0.7s 0.3s ease both; }
+  .anim-4 { animation:fadeInUp 0.7s 0.45s ease both; }
+  .anim-5 { animation:fadeInUp 0.7s 0.6s ease both; }
+  .anim-left { animation:fadeInLeft 0.7s ease both; }
+  .anim-right { animation:fadeInRight 0.7s ease both; }
+  .anim-scale { animation:scaleIn 0.6s ease both; }
+  .float { animation:float 4s ease-in-out infinite; }
 
   /* HEADER */
   header { position: sticky; top: 0; z-index: 1000; background: var(--secondary); box-shadow: 0 2px 20px rgba(0,0,0,0.3); padding: 0 2rem; }
@@ -38,16 +56,16 @@
 
   /* HERO */
   .hero { min-height: 100vh; background: linear-gradient(135deg, #0D0D1A 0%, #1A1A2E 40%, #0F3460 100%); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 20% 50%, #6366f126 0%, transparent 60%), radial-gradient(ellipse 600px 500px at 80% 30%, #6366f11a 0%, transparent 60%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 20% 50%, #4f46e526 0%, transparent 60%), radial-gradient(ellipse 600px 500px at 80% 30%, #4f46e51a 0%, transparent 60%); }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
   .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 2rem; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #6366f126; border: 1px solid #6366f166; color: #6366f1; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #4f46e526; border: 1px solid #4f46e566; color: #4f46e5; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
   .hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -1px; }
   .hero h1 span { color: var(--primary); }
   .hero-tagline { font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: #94A3B8; margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-  .btn-primary { background: var(--primary); color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 20px #6366f166; transition: all 0.3s; display: inline-block; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #6366f180; }
+  .btn-primary { background: var(--primary); color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 20px #4f46e566; transition: all 0.3s; display: inline-block; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #4f46e580; }
   .btn-outline { background: transparent; color: #fff; padding: 0.95rem 2.2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; display: inline-block; }
   .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
   .hero-stats { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -64,7 +82,7 @@
   .about-visual { background: var(--secondary); border-radius: 20px; padding: 3rem; position: relative; overflow: hidden; }
   .about-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: var(--primary); opacity: 0.15; }
   .owner-block { position: relative; z-index: 1; }
-  .owner-avatar { width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), #6366f188); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; }
+  .owner-avatar { width: 80px; height: 80px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), #4f46e588); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 1.2rem; }
   .owner-name { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem; }
   .owner-role { font-size: 0.88rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
   .owner-bio { font-size: 0.9rem; color: #94A3B8; line-height: 1.7; }
@@ -80,6 +98,34 @@
   .svc-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
   .svc-title { font-weight: 700; font-size: 1rem; color: var(--dark); margin-bottom: 0.4rem; }
   .svc-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+  /* RESULTS */
+  .results { padding: 6rem 2rem; background: linear-gradient(135deg, #0D0D1A 0%, #1A1A2E 100%); position: relative; overflow: hidden; }
+  .results-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  .result-item { text-align: center; }
+  .result-num { font-size: clamp(2.5rem,4vw,3.5rem); font-weight: 900; color: #fff; display: block; line-height: 1; margin-bottom: 0.5rem; }
+  .result-num span { color: var(--primary); }
+  .result-label { font-size: 0.9rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+  .result-bar { width: 40px; height: 3px; background: var(--primary); margin: 0.8rem auto 0; border-radius: 2px; }
+  .results-cta { text-align: center; margin-top: 3.5rem; }
+  .results-cta p { color: #94A3B8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+  /* BLOG */
+  .blog { padding: 6rem 2rem; background: var(--light-gray); }
+  .blog-inner { max-width: 1200px; margin: 0 auto; }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .blog-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--border); transition: all 0.3s; }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+  .blog-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+  .blog-content { padding: 1.5rem; }
+  .blog-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem; }
+  .blog-date { font-size: 0.78rem; color: var(--gray); }
+  .blog-category { background: #4f46e514; color: var(--primary); padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 0.7rem; }
+  .blog-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.2rem; }
+  .btn-read-more { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--primary); font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: gap 0.2s; }
+  .btn-read-more:hover { gap: 0.6rem; }
 
   /* WHY US */
   .why { padding: 5rem 2rem; background: var(--secondary); }
@@ -153,6 +199,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#blog">Blog</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
       <a href="#contact" class="nav-cta">Get In Touch</a>
@@ -163,11 +210,11 @@
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-badge">&#10022; AI Calling Software · Cumming</div>
-    <h1>Call <span>Mate</span></h1>
-    <p class="hero-tagline">Automate your calling workflow with intelligent AI agents that extract data and drive results.</p>
-    <div class="hero-btns"><a href="tel:7044780755" class="btn-primary">&#128222; 7044780755</a><a href="mailto:sourankaghosh@gmail.com" class="btn-outline">&#9993; sourankaghosh@gmail.com</a></div>
-    <div class="hero-stats">
+    <div class="hero-badge anim-1">&#10022; AI Calling Software · Cumming</div>
+    <h1 class="anim-2">Call <span>Mate</span></h1>
+    <p class="hero-tagline anim-3">AI-powered calling agents that extract data and close deals on autopilot.</p>
+    <div class="hero-btns anim-4"><a href="tel:7044780755" class="btn-primary">&#128222; 7044780755</a><a href="mailto:sourankaghosh@gmail.com" class="btn-outline">&#9993; sourankaghosh@gmail.com</a></div>
+    <div class="hero-stats anim-5">
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Client Focus</div></div>
       <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Services</div></div>
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
@@ -177,13 +224,13 @@
 
 <section class="about" id="about">
   <div class="about-inner">
-    <div>
+    <div class="anim-left">
       <div class="section-tag">About Us</div>
       <h2 class="section-title">Who We Are</h2>
-      <p class="about-desc">Call Mate is an advanced AI calling software platform that revolutionizes how businesses handle customer outreach and data extraction. Founded by Souranka Ghosh, we specialize in deploying intelligent calling agents that automate conversations, extract valuable information, and improve customer engagement at scale. Our cutting-edge technology transforms traditional calling operations into efficient, data-driven processes that save time and increase conversion rates.</p>
+      <p class="about-desc">Call Mate is a cutting-edge AI calling software platform that automates customer outreach and call extraction with intelligent calling agents. Founded by Souranka Ghosh, we help businesses in Cumming and beyond streamline their communication processes, reduce operational costs, and maximize conversion rates. Our AI-driven agents handle complex conversations, qualify leads, and extract valuable data—all while maintaining a natural, human-like interaction.</p>
       <a href="tel:7044780755" class="btn-primary">&#128222; 7044780755</a>
     </div>
-    <div class="about-visual">
+    <div class="about-visual anim-right float">
       <div class="owner-block">
         <div class="owner-avatar">CM</div>
         <div class="owner-name">Souranka Ghosh</div>
@@ -202,23 +249,68 @@
       <h2 class="section-title">Our Services</h2>
     </div>
     <div class="svc-grid"><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9733;</div>
-          <div><div class="svc-title">AI-Powered Calling Agent Deployment</div><p class="svc-desc">Professional ai-powered calling agent deployment tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9733;</div>
+          <div><div class="svc-title">AI Calling Agent Services</div><p class="svc-desc">Professional ai calling agent services tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9654;</div>
-          <div><div class="svc-title">Automated Call Data Extraction</div><p class="svc-desc">Professional automated call data extraction tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9654;</div>
+          <div><div class="svc-title">Automated Call Extraction</div><p class="svc-desc">Professional automated call extraction tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9670;</div>
-          <div><div class="svc-title">Lead Generation and Qualification</div><p class="svc-desc">Professional lead generation and qualification tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9670;</div>
+          <div><div class="svc-title">Lead Qualification & Outreach</div><p class="svc-desc">Professional lead qualification & outreach tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9632;</div>
-          <div><div class="svc-title">Customer Outreach Automation</div><p class="svc-desc">Professional customer outreach automation tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9632;</div>
+          <div><div class="svc-title">Data Collection & Processing</div><p class="svc-desc">Professional data collection & processing tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9650;</div>
-          <div><div class="svc-title">Real-Time Call Analytics and Reporting</div><p class="svc-desc">Professional real-time call analytics and reporting tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9650;</div>
+          <div><div class="svc-title">Call Recording & Analytics</div><p class="svc-desc">Professional call recording & analytics tailored to your business goals.</p></div>
         </div><div class="svc-card">
-          <div class="svc-icon" style="background:#6366f122;color:#6366f1">&#9679;</div>
-          <div><div class="svc-title">Natural Language Conversation Management</div><p class="svc-desc">Professional natural language conversation management tailored to your business goals.</p></div>
+          <div class="svc-icon" style="background:#4f46e522;color:#4f46e5">&#9679;</div>
+          <div><div class="svc-title">24/7 Virtual Call Center Support</div><p class="svc-desc">Professional 24/7 virtual call center support tailored to your business goals.</p></div>
+        </div></div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="results-inner">
+    <div class="section-tag" style="color:#4f46e5">Our Results</div>
+    <h2 class="section-title" style="color:#fff;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;letter-spacing:-.5px;margin-bottom:.5rem">Numbers That Speak</h2>
+    <p style="color:#94A3B8;margin-bottom:0">Real outcomes achieved for real businesses.</p>
+    <div class="results-grid"><div class="result-item"><span class="result-num">500+</span><p class="result-label">Clients Served</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">98%</span><p class="result-label">Call Completion Rate</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">10+</span><p class="result-label">Years AI Experience</p><div class="result-bar"></div></div><div class="result-item"><span class="result-num">24/7</span><p class="result-label">Support Available</p><div class="result-bar"></div></div></div>
+    <div class="results-cta">
+      <p>Ready to add your success story to our track record?</p>
+      <a href="tel:7044780755" class="btn-primary">&#128222; 7044780755</a>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="blog-inner">
+    <div class="section-tag">Our Blog</div>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;letter-spacing:-.5px">AI Calling Software Insights &amp; Trends</h2>
+    <div class="blog-grid"><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#1A1A2E 0%,#4f46e5 100%)">&#128227;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">May 2025</span><span class="blog-category">Tips</span></div>
+            <h3>5 Ways AI Calling Agents Boost Your Lead Generation</h3>
+            <p>Discover how intelligent calling agents can transform your sales pipeline and automate follow-ups.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
+        </div><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#0F3460 0%,#4f46e5cc 100%)">&#128269;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">April 2025</span><span class="blog-category">Insights</span></div>
+            <h3>The Future of Customer Outreach: AI vs. Human Agents</h3>
+            <p>Learn how AI calling technology complements your team and scales your business without additional overhead.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
+        </div><div class="blog-card">
+          <div class="blog-img" style="background:linear-gradient(135deg,#4f46e5 0%,#1A1A2E 100%)">&#127775;</div>
+          <div class="blog-content">
+            <div class="blog-meta"><span class="blog-date">March 2025</span><span class="blog-category">Guide</span></div>
+            <h3>Complete Guide to Call Extraction and Data Management</h3>
+            <p>Master the art of extracting valuable customer data automatically with AI-powered call agents.</p>
+            <a href="#blog" class="btn-read-more">Read More &#8594;</a>
+          </div>
         </div></div>
   </div>
 </section>
@@ -226,10 +318,10 @@
 <section class="why" id="why">
   <div class="why-inner">
     <div class="why-header">
-      <div class="section-tag" style="color:#6366f1">Why Choose Us</div>
+      <div class="section-tag" style="color:#4f46e5">Why Choose Us</div>
       <h2 class="section-title" style="color:#fff">What Sets Us Apart</h2>
     </div>
-    <div class="why-grid"><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#10003;</div><div><div class="why-title">Expert-developed AI technology that understands context and nuance in conversations</div></div></div><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#9654;</div><div><div class="why-title">Seamless integration with your existing CRM and business systems</div></div></div><div class="why-item"><div class="why-icon" style="background:#6366f122;color:#6366f1">&#9733;</div><div><div class="why-title">Proven track record of increasing efficiency and reducing operational costs by up to 70%</div></div></div></div>
+    <div class="why-grid"><div class="why-item"><div class="why-icon" style="background:#4f46e522;color:#4f46e5">&#10003;</div><div><div class="why-title">Advanced AI technology that sounds natural and handles complex conversations with ease</div></div></div><div class="why-item"><div class="why-icon" style="background:#4f46e522;color:#4f46e5">&#9654;</div><div><div class="why-title">Proven track record of improving call efficiency and reducing manual labor costs by up to 70%</div></div></div><div class="why-item"><div class="why-icon" style="background:#4f46e522;color:#4f46e5">&#9733;</div><div><div class="why-title">Dedicated support team and customizable solutions tailored to your business needs</div></div></div></div>
   </div>
 </section>
 
@@ -241,24 +333,24 @@
     </div>
     <div class="testi-grid"><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"Call Mate transformed our outreach strategy. We've tripled our lead qualification rate while reducing labor costs significantly."</p>
+          <p class="testi-text">"Call Mate's AI agents have cut our outbound calling time in half while improving our lead quality significantly."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#6366f1">S</div>
-            <div><div class="testi-name">Sarah Mitchell</div><div class="testi-role">Sales Director, Tech Innovations Inc.</div></div>
+            <div class="testi-avatar" style="background:#4f46e5">M</div>
+            <div><div class="testi-name">Marcus Johnson</div><div class="testi-role">Sales Director, Tech Solutions Inc.</div></div>
           </div>
         </div><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"The accuracy of data extraction is impressive. Our team now focuses on strategy instead of manual data entry."</p>
+          <p class="testi-text">"The call extraction feature is a game-changer. We now have clean, structured data without manual entry."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#6366f1">J</div>
-            <div><div class="testi-name">James Patterson</div><div class="testi-role">Operations Manager, RetailPro Solutions</div></div>
+            <div class="testi-avatar" style="background:#4f46e5">E</div>
+            <div><div class="testi-name">Emily Rodriguez</div><div class="testi-role">Marketing Manager, Growth Ventures</div></div>
           </div>
         </div><div class="testi-card">
           <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testi-text">"Call Mate's AI agents handle complex conversations naturally. Our clients are amazed at the quality of interactions and results."</p>
+          <p class="testi-text">"Reliable, intelligent, and incredibly easy to integrate. Call Mate is the AI partner we've been searching for."</p>
           <div class="testi-author">
-            <div class="testi-avatar" style="background:#6366f1">M</div>
-            <div><div class="testi-name">Michelle Chen</div><div class="testi-role">CEO, Growth Marketing Agency</div></div>
+            <div class="testi-avatar" style="background:#4f46e5">D</div>
+            <div><div class="testi-name">David Chen</div><div class="testi-role">Operations Lead, Enterprise Services</div></div>
           </div>
         </div></div>
   </div>
@@ -282,7 +374,7 @@
         </div>
         <div class="form-row">
           <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone"></div>
-          <div class="form-group"><label>Service</label><select><option value="">Select a service...</option><option>AI-Powered Calling Agent Deployment</option><option>Automated Call Data Extraction</option><option>Lead Generation and Qualification</option><option>Customer Outreach Automation</option><option>Real-Time Call Analytics and Reporting</option><option>Natural Language Conversation Management</option></select></div>
+          <div class="form-group"><label>Service</label><select><option value="">Select a service...</option><option>AI Calling Agent Services</option><option>Automated Call Extraction</option><option>Lead Qualification & Outreach</option><option>Data Collection & Processing</option><option>Call Recording & Analytics</option><option>24/7 Virtual Call Center Support</option></select></div>
         </div>
         <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your needs..."></textarea></div>
         <button type="submit" class="btn-submit">&#128293; Send Message</button>
@@ -299,7 +391,7 @@
           <div class="logo-icon" style="width:36px;height:36px;font-size:.9rem">CM</div>
           <div class="logo-text"><span class="brand" style="color:#fff">Call Mate</span><span class="sub">Cumming</span></div>
         </a>
-        <p>Call Mate is an advanced AI calling software platform that revolutionizes how businesses handle customer outreach and da...</p>
+        <p>Call Mate is a cutting-edge AI calling software platform that automates customer outreach and call extraction with intel...</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -312,7 +404,7 @@
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <ul><li><a href='#services'>AI-Powered Calling Agent Deployment</a></li><li><a href='#services'>Automated Call Data Extraction</a></li><li><a href='#services'>Lead Generation and Qualification</a></li><li><a href='#services'>Customer Outreach Automation</a></li><li><a href='#services'>Real-Time Call Analytics and Reporting</a></li><li><a href='#services'>Natural Language Conversation Management</a></li></ul>
+        <ul><li><a href='#services'>AI Calling Agent Services</a></li><li><a href='#services'>Automated Call Extraction</a></li><li><a href='#services'>Lead Qualification & Outreach</a></li><li><a href='#services'>Data Collection & Processing</a></li><li><a href='#services'>Call Recording & Analytics</a></li><li><a href='#services'>24/7 Virtual Call Center Support</a></li></ul>
       </div>
     </div>
     <div class="footer-bottom">
